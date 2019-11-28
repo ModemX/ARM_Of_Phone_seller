@@ -13,29 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ARM_Of_Phone_seller_PROJECT
+namespace ARM_Of_Phone_seller_PROJECT.View
 {
     /// <summary>
-    /// Логика взаимодействия для Auth.xaml
+    /// Логика взаимодействия для Главная_страница.xaml
     /// </summary>
-    public partial class Auth : Page
+    public partial class Главная_страница : Page
     {
-        public MainWindow mainWindow;
-        public Auth(MainWindow _mainWindow)
+        public Главная_страница()
         {
             InitializeComponent();
-
-            mainWindow = _mainWindow;
-        }
-
-        private void Auth_Button_Login_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Auth_Button_Guest_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

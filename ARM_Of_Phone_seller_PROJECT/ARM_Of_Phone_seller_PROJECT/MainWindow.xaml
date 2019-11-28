@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="1000">
     <Grid>
-        <Frame x:Name="MainFrame" Content="Auth and main window" Margin="10,80,9.6,10.4"/>
+        <Frame x:Name="MainFrame" Content="Auth and main window" Margin="10,80,9.6,10.4" NavigationUIVisibility="Hidden"/>
         <Frame x:Name="Info" Content="Info panel" Margin="10,10,9.6,500.4"/>
 
     </Grid>
