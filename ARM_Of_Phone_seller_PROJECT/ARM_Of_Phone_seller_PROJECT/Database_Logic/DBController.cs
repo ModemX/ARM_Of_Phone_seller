@@ -11,14 +11,16 @@ namespace ARM_Of_Phone_seller_PROJECT.Database_Logic
     {
         private static string db = "ARM_Of_Phone_Seller";
         private static string user = "SADMODSNOTEBOOK\\SQLEXPRESS";
-
+        public static string DBController_DBName { get => db; set => db = value; }
+        public static string DBController_User { get => user; set => user = value; }
         private static string Path
         {
             get
             {
-                return $"Data Source={user};Initial Catalog={db};Integrated Security=True";
+                return $"Data Source={DBController_User};Initial Catalog={DBController_DBName};Integrated Security=True";
             }
         }
+
 
         SqlConnection connection;
 

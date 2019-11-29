@@ -23,6 +23,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,6 +33,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -55,15 +57,39 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Switcher.cs" />
-    <Compile Include="View\Главная_страница.xaml.cs">
+    <Compile Include="Database_Logic\Таблицы_БД\Клиент.cs" />
+    <Compile Include="Database_Logic\Таблицы_БД\Продажа.cs" />
+    <Compile Include="Database_Logic\Таблицы_БД\Распределение_по_цветам.cs" />
+    <Compile Include="Database_Logic\Таблицы_БД\Товар.cs" />
+    <Compile Include="Database_Logic\Таблицы_БД\Характеристики.cs" />
+    <Compile Include="Database_Logic\Таблицы_БД\Цвета.cs" />
+    <Compile Include="Windows\Catalog.xaml.cs">
+      <DependentUpon>Catalog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\Switcher.cs" />
+    <Compile Include="Frames\Shared Data.cs" />
+    <Compile Include="Frames\Информационная панель\Информация о входе_Главная панель.xaml.cs">
+      <DependentUpon>Информация о входе_Главная панель.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\Основная область\Главная_страница.xaml.cs">
       <DependentUpon>Главная_страница.xaml</DependentUpon>
     </Compile>
-    <Page Include="View\Auth.xaml">
+    <Compile Include="Frames\Основная область\Изменение_Источника.xaml.cs">
+      <DependentUpon>Изменение_Источника.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Windows\Catalog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainWindow.xaml">
+    <Page Include="Frames\Информационная панель\Информация о входе_Главная панель.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Frames\Основная область\Auth.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -71,22 +97,26 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="View\Auth.xaml.cs">
+    <Compile Include="Frames\Основная область\Auth.xaml.cs">
       <DependentUpon>Auth.xaml</DependentUpon>
     </Compile>
     <Compile Include="Database_Logic\DBController.cs" />
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="Windows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="View\Главная_страница.xaml">
+    <Page Include="Frames\Основная область\Главная_страница.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Frames\Основная область\Изменение_Источника.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\IModel.cs" />
-    <Compile Include="Model\СпециалистModel.cs" />
+    <Compile Include="Database_Logic\Таблицы_БД\IModel.cs" />
+    <Compile Include="Database_Logic\Таблицы_БД\Специалист.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -114,6 +144,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Database_Logic\SQL_DB_Creation.sql" />
+    <Resource Include="Icons\App.ico" />
+    <Resource Include="Icons\Catalog.png" />
+    <Resource Include="Icons\Deny.png" />
+    <Resource Include="Icons\OK.png" />
     <Resource Include="Icons\DB.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
