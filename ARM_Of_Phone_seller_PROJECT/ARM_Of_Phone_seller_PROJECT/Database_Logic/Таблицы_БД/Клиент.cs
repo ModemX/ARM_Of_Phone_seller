@@ -30,7 +30,6 @@ namespace ARM_Of_Phone_seller_PROJECT.Database_Logic.Таблицы_БД
             using (var db = new DBController())
             {
                 db.ExecuteNonQueryCommand($"INSERT INTO Клиент VALUES (" +
-                    $"{item.ID_Клиента}, " +
                     $"\'{item.Фамилия}\', " +
                     $"\'{item.Имя}\', " +
                     $"\'{item.Отчество}\', " +
@@ -68,12 +67,13 @@ namespace ARM_Of_Phone_seller_PROJECT.Database_Logic.Таблицы_БД
         {
             using (var db = new DBController())
             {
-                db.ExecuteNonQueryCommand($"UPDATE Клиент SET " +
-                    $"ID_Клиента = {item.ID_Клиента}, " +
-                    $"Фамилия = \'{item.Фамилия}\', " +
-                    $"Имя = \'{item.Имя}\', " +
-                    $"Отчество = \'{item.Отчество}\', " +
-                    $"Номер_паспорта = {item.Номер_паспорта}");
+                db.ExecuteNonQueryCommand($"UPDATE Клиент " +
+                    $"SET " +
+                    $"Фамилия = \'{item.Фамилия}\'," +
+                    $"Имя = \'{item.Имя}\'," +
+                    $"Отчество = \'{item.Отчество}\'," +
+                    $"Номер_паспорта = \'{item.Номер_паспорта}\' " +
+                    $"WHERE ID_Клиента = {item.ID_Клиента}");
             }
         }
     }

@@ -64,11 +64,17 @@ namespace ARM_Of_Phone_seller_PROJECT.Database_Logic.Таблицы_БД
                     {
                         list.Add(new Продажа_Поля()
                         {
-                            ID_Клиента = reader.GetInt32(0),
-                            Фамилия = reader.GetString(1),
-                            Имя = reader.GetString(2),
-                            Отчество = reader.GetString(3),
-                            Номер_паспорта = reader.GetString(4),
+                            Номер_договора = reader.GetString(0),
+                            Дата_заключения_договора = reader.GetDateTime(1),
+                            Срок_действия_договора = reader.GetDouble(2),
+                            Окончание_гарантийного_срока = reader.GetDateTime(3),
+                            Дата_продажи = reader.GetDateTime(4),
+                            Процент_НДС = reader.GetDouble(5),
+                            Стоимость_постгарантийного_обсуживания = reader.GetDouble(6),
+                            Сумма_продажи = reader.GetDouble(7),
+                            ID_Специалиста = reader.GetInt32(8),
+                            ID_Клиента = reader.GetInt32(9),
+                            ID_Модели = reader.GetInt32(10)
                         });
                     }
                 }
@@ -78,7 +84,21 @@ namespace ARM_Of_Phone_seller_PROJECT.Database_Logic.Таблицы_БД
 
         public void Update(Продажа_Поля item)
         {
-            throw new NotImplementedException();
+            using (var db = new DBController())
+            {
+                db.ExecuteNonQueryCommand($"UPDATE Клиент SET " +
+                    $"Номер_договора = {item.Номер_договора}, " +
+                    $"Дата_заключения_договора = {item.Дата_заключения_договора}, " +
+                    $"Срок_действия_договора = {item.Стоимость_постгарантийного_обсуживания}, " +
+                    $"Окончание_гарантийного_срока = {item.Окончание_гарантийного_срока}, " +
+                    $"Дата_продажи = {item.Дата_продажи}, " +
+                    $"Процент_НДС = {item.Процент_НДС}, " +
+                    $"Стоимость_постгарантийного_обсуживания = {item.Стоимость_постгарантийного_обсуживания}, " +
+                    $"Сумма_продажи = {item.Сумма_продажи}, " +
+                    $"ID_Специалиста = {item.ID_Специалиста}, " +
+                    $"ID_Клиента = {item.ID_Клиента}, " +
+                    $"ID_Модели = {item.ID_Модели}");
+            }
         }
         private string GetDate(DateTime date)
         {

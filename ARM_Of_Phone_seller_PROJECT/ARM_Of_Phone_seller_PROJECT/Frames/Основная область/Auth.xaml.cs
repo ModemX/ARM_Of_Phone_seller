@@ -91,5 +91,13 @@ namespace ARM_Of_Phone_seller_PROJECT
                 return false;
             }
         }
+
+        private void Auth_Password_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            if (e.Key == System.Windows.Input.Key.Enter)
+            {
+                Auth_Button_Login_Click(new object(), new RoutedEventArgs());
+            }
+        }
     }
 }

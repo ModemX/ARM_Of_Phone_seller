@@ -8,7 +8,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Auth" Width="974.4" Height="480">
 
-    <Grid Width="974.4" Height="480">
+    <Grid Width="974.4" Height="480" FocusManager.FocusedElement="{Binding ElementName=Auth_Login}">
         <Grid.RowDefinitions>
             <RowDefinition/>
         </Grid.RowDefinitions>
@@ -18,7 +18,7 @@
         <Label Content="Введите логин:" HorizontalAlignment="Left" Margin="427,95,0,354" Width="98" TextOptions.TextFormattingMode="Display" Foreground="White"/>
         <Label Content="Введите пароль:" HorizontalAlignment="Left" Margin="427,154,0,0" VerticalAlignment="Top" Width="112" Height="26" TextOptions.TextFormattingMode="Display" Foreground="White"/>
         <TextBox x:Name="Auth_Login" HorizontalAlignment="Left" Height="23" Margin="382,126,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="200" TextOptions.TextFormattingMode="Display"/>
-        <PasswordBox x:Name="Auth_Password" HorizontalAlignment="Left" Margin="381,185,0,0" VerticalAlignment="Top" Width="200" Height="23" TextOptions.TextFormattingMode="Display"/>
+        <PasswordBox x:Name="Auth_Password" HorizontalAlignment="Left" Margin="381,185,0,0" VerticalAlignment="Top" Width="200" Height="23" TextOptions.TextFormattingMode="Display" KeyUp="Auth_Password_KeyUp"/>
         <Button x:Name="Auth_Button_Login" Content="Авторизироваться" Command="{Binding SelectСпециалисты}" HorizontalAlignment="Left" Margin="381,213,0,0" VerticalAlignment="Top" Width="200" Height="30" TextOptions.TextFormattingMode="Display" TextOptions.TextHintingMode="Fixed" Click="Auth_Button_Login_Click"/>
         <Button x:Name="Auth_Button_Guest" Content="Войти как гость" HorizontalAlignment="Left" Margin="381,248,0,0" VerticalAlignment="Top" Width="200" Height="30" TextOptions.TextFormattingMode="Display" TextOptions.TextHintingMode="Fixed" Click="Auth_Button_Guest_Click" Background="#FFFF9898"/>
         <Button HorizontalAlignment="Left" Margin="819,420,0,0" VerticalAlignment="Top" Width="145" Height="50" Click="Button_Click">

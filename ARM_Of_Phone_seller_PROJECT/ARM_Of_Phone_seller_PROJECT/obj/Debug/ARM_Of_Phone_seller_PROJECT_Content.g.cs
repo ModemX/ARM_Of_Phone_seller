@@ -9,5 +9,6 @@
 //------------------------------------------------------------------------------
 
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("database_logic/sql_db_creation.sql")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("temp.sql")]
 
 

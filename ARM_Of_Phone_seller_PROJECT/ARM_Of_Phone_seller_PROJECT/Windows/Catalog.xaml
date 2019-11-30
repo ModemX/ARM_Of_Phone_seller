@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ARM_Of_Phone_seller_PROJECT"
-        xmlns:Model="clr-namespace:ARM_Of_Phone_seller_PROJECT.Model" x:Class="ARM_Of_Phone_seller_PROJECT.Catalog"
+        xmlns:Model="clr-namespace:ARM_Of_Phone_seller_PROJECT.Model" xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="ARM_Of_Phone_seller_PROJECT.Catalog"
         mc:Ignorable="d"
         Title="Каталог и сортировка" Height="450" Width="807.464" WindowStartupLocation="CenterScreen" Icon="pack://application:,,,/Icons/Catalog.png" Background="#FF1E1E1E">
     <Grid>
@@ -16,28 +16,54 @@
             <ColumnDefinition/>
             <ColumnDefinition Width="228.8"/>
         </Grid.ColumnDefinitions>
-        <Grid Grid.Column="1" Margin="0,0,-0.2,0" Grid.RowSpan="2">
-            <Rectangle Stroke="White" Margin="10,10,10,0" Height="33" VerticalAlignment="Top">
-                <Rectangle.Fill>
-                    <SolidColorBrush Color="White" Opacity="0.25"/>
-                </Rectangle.Fill>
-            </Rectangle>
-            <Label Content="Параметр 1:" Margin="10,14,141,0" TextOptions.TextFormattingMode="Display" VerticalAlignment="Top" Foreground="White"/>
-            <Label Content="Placeholder" Margin="88,14,10,0" TextOptions.TextFormattingMode="Display" VerticalAlignment="Top" Foreground="White"/>
+        <Grid Grid.Column="1" Margin="0,0,-0.2,0.4">
+            <StackPanel Margin="10,10,10,206" Orientation="Vertical">
+                <Grid Margin="0,0,-0.2,3" Height="33">
+                    <Rectangle Stroke="White" Margin="0,0,-0.2,0" Height="33" VerticalAlignment="Top">
+                        <Rectangle.Fill>
+                            <SolidColorBrush Color="White" Opacity="0.25"/>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Label x:Name="Form_Фамилия" Content="Фамилия:" Margin="0,4,-0.2,0" TextOptions.TextFormattingMode="Display" VerticalAlignment="Top" Foreground="White"/>
+                </Grid>
+                <Grid Margin="0,0,-0.2,3" Height="33">
+                    <Rectangle Stroke="White" Margin="0,0,-0.2,0" Height="33" VerticalAlignment="Top">
+                        <Rectangle.Fill>
+                            <SolidColorBrush Color="White" Opacity="0.25"/>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Label x:Name="Form_Имя" Content="Имя:" Margin="0,4,-0.2,0" TextOptions.TextFormattingMode="Display" VerticalAlignment="Top" Foreground="White"/>
+                </Grid>
+                <Grid Margin="0,0,-0.2,3" Height="33">
+                    <Rectangle Stroke="White" Margin="0,0,-0.2,0" Height="33" VerticalAlignment="Top">
+                        <Rectangle.Fill>
+                            <SolidColorBrush Color="White" Opacity="0.25"/>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Label x:Name="Form_Отчество" Content="Отчество:" Margin="0,4,-0.2,0" TextOptions.TextFormattingMode="Display" VerticalAlignment="Top" Foreground="White"/>
+                </Grid>
+                <Grid Margin="0,0,-0.2,3" Height="33">
+                    <Rectangle Stroke="White" Margin="0,0,-0.2,0" Height="33" VerticalAlignment="Top">
+                        <Rectangle.Fill>
+                            <SolidColorBrush Color="White" Opacity="0.25"/>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Label x:Name="Form_Паспорт" Content="Номер паспорта:" Margin="0,4,-0.2,0" TextOptions.TextFormattingMode="Display" VerticalAlignment="Top" Foreground="White"/>
+                </Grid>
+            </StackPanel>
         </Grid>
-        <DataGrid x:Name="CatalogGrid" Margin="0,0,0,0.4" IsSynchronizedWithCurrentItem="True">
-            <!--<DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding Path = ID_Клиента}" Foreground="White"/>
-                <DataGridTextColumn Header="Фамилия" Binding="{Binding Фамилия}" Foreground="White"/>
-                <DataGridTextColumn Header="Имя" Binding="{Binding Имя}" Foreground="White"/>
-                <DataGridTextColumn Header="Отчество" Binding="{Binding Отчество}" Foreground="White"/>
-                <DataGridTextColumn Header="Номер паспорта" Binding="{Binding Номер_паспорта}" Foreground="White"/>
-            </DataGrid.Columns>-->
+        <DataGrid x:Name="CatalogGrid" Margin="0,0,0,0.4" IsSynchronizedWithCurrentItem="True" AutoGenerateColumns="False" Background="#FF1E1E1E" CanUserReorderColumns="False" HeadersVisibility="Column" SelectionChanged="CatalogGrid_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Фамилия" Binding="{Binding Фамилия}"/>
+                <DataGridTextColumn Header="Имя" Binding="{Binding Имя}"/>
+                <DataGridTextColumn Header="Отчество" Binding="{Binding Отчество}"/>
+                <DataGridTextColumn Header="Номер паспорта" Binding="{Binding Номер_паспорта}"/>
+            </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="SaveChanges" HorizontalAlignment="Left" Margin="10,4.6,0,0" Width="145" Click="SaveChanges_Click" Grid.Row="1" Height="40" VerticalAlignment="Top">
+        <Button x:Name="SaveChanges" Margin="10,4.6,9.8,5" Click="SaveChanges_Click" Grid.Row="1" Grid.Column="1">
             <StackPanel Orientation="Horizontal" Height="35">
                 <Image Source="pack://application:,,,/Icons/OK.png" Width="36"/>
-                <TextBlock Width="101" TextAlignment="Center"><Run Text="Сохранить "/><LineBreak/><Run Text="изменения"/></TextBlock>
+                <TextBlock Width="156" TextAlignment="Center" Text="Сохранить и обновить" Margin="0,0,0,0.2" VerticalAlignment="Center"/>
             </StackPanel>
         </Button>
 
