@@ -57,6 +57,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Database_Logic\Таблицы_БД\Вызов представлений Базы данных.cs" />
     <Compile Include="Database_Logic\Таблицы_БД\Клиент.cs" />
     <Compile Include="Database_Logic\Таблицы_БД\Продажа.cs" />
     <Compile Include="Database_Logic\Таблицы_БД\Распределение_по_цветам.cs" />

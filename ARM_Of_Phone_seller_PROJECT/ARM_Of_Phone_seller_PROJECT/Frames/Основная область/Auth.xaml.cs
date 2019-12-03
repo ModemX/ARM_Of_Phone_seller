@@ -27,15 +27,6 @@ namespace ARM_Of_Phone_seller_PROJECT
             using (MD5 md5Hash = MD5.Create())
             {
                 hash = GetMd5Hash(md5Hash, data);
-
-                //if (VerifyMd5Hash(md5Hash, data, hash))
-                //{
-                //    Console.WriteLine("The hashes are the same.");
-                //}
-                //else
-                //{
-                //    Console.WriteLine("The hashes are not same.");
-                //}
             }
             return hash.ToUpper();
         }
@@ -53,6 +44,7 @@ namespace ARM_Of_Phone_seller_PROJECT
             }
             else
             {
+                Auth_Password.Password = "";
                 HintBlock.Text = "Неверный Логин/Пароль. Проверьте корректность введенных данных";
             }
         }
