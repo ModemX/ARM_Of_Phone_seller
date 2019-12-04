@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ARM_Of_Phone_seller_PROJECT.Model;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,65 +9,144 @@ using System.Windows.Documents;
 
 namespace ARM_Of_Phone_seller_PROJECT.Database_Logic.Таблицы_БД
 {
-    class Вызов_представлений_Базы_данных
+    class Вызов_представлений_Базы_данных : IModel<Модели_И_Их_Характеристики_Поля>
     {
-        
-        public IEnumerable Select() //Написать Insert и Delete для представления
+        public void Delete(Модели_И_Их_Характеристики_Поля item)
         {
             using (var db = new DBController())
             {
-                var reader = db.ExecuteReader($"SELECT dbo.Товар.Название_модели AS [Название модели], dbo.Товар.Год_выпуска_модели AS [Год выпуска], dbo.Характеристики.ОЗУ, dbo.Характеристики.Количество_встроенной_памяти AS [Количество встроенной памяти], dbo.Характеристики.Слот_MicroSD AS [Слот MicroSD], dbo.Характеристики.ОС, dbo.Характеристики.Версия_ОС AS [Версия ОС], dbo.Характеристики.Разрешение_камеры AS [Разрешение камеры], dbo.Характеристики.Емкость_аккумулятора AS [Емкость аккумулятора], dbo.Характеристики.Количество_SIM, dbo.Характеристики.Длинна, dbo.Характеристики.Ширина, dbo.Характеристики.Толщина, dbo.Характеристики.Вес FROM dbo.Товар INNER JOIN dbo.Характеристики ON dbo.Товар.ID_Модели = dbo.Характеристики.ID_Модели");
+                db.ExecuteNonQueryCommand($"delete from Характеристики where ID_Модели = \'{item.ID_Модели}\'");
+            }
+        }
+
+        public void Insert(Модели_И_Их_Характеристики_Поля item)
+        {
+            throw new NotImplementedException();
+        }
+
+        /*        public void Insert(Модели_И_Их_Характеристики_Поля item)
+                {
+                    using (var db = new DBController())
+                    {
+                        string debug = $"INSERT INTO [Модели и характеристики] VALUES (" +
+                            $"N\'{item.Название_модели}\', " +
+                            $"\'{GetDate(item.Год_выпуска_модели)}\', " +
+                            $"\'{item.ОЗУ}\', " +
+                            $"\'{item.Количество_встроенной_памяти}\', " +
+                            $"\'{item.Слот_MicroSD}\', " +
+                            $"N\'{item.ОС}\', " +
+                            $"N\'{item.Версия_ОС}\', " +
+                            $"\'{item.Разрешение_камеры}\', " +
+                            $"\'{item.Емкость_аккумулятора}\', " +
+                            $"\'{item.Количество_SIM}\', " +
+                            $"\'{item.Длинна}\', " +
+                            $"\'{item.Ширина}\', " +
+                            $"\'{item.Толщина}\', " +
+                            $"\'{item.Вес}\'" +
+                            $")";
+                        db.ExecuteNonQueryCommand(debug);
+                    }
+            }*/
+        public void InsertEmptyEntry()
+        {
+            using (var db = new DBController())
+            {
+                string debug = "exec InsertEmptyEntry";
+                db.ExecuteNonQueryCommand(debug);
+            }
+        }
+
+        public IEnumerable<Модели_И_Их_Характеристики_Поля> Select()
+        {
+            using (var db = new DBController())
+            {
+                var reader = db.ExecuteReader($"SELECT dbo.Товар.ID_Модели, dbo.Товар.Название_модели AS [Название модели], dbo.Товар.Год_выпуска_модели AS [Год выпуска], dbo.Характеристики.ОЗУ, dbo.Характеристики.Количество_встроенной_памяти AS [Количество встроенной памяти], dbo.Характеристики.Слот_MicroSD AS [Слот MicroSD], dbo.Характеристики.ОС, dbo.Характеристики.Версия_ОС AS [Версия ОС], dbo.Характеристики.Разрешение_камеры AS [Разрешение камеры], dbo.Характеристики.Емкость_аккумулятора AS [Емкость аккумулятора], dbo.Характеристики.Количество_SIM, dbo.Характеристики.Длинна, dbo.Характеристики.Ширина, dbo.Характеристики.Толщина, dbo.Характеристики.Вес FROM dbo.Товар INNER JOIN dbo.Характеристики ON dbo.Товар.ID_Модели = dbo.Характеристики.ID_Модели");
                 var list = new List<Модели_И_Их_Характеристики_Поля>();
 
                 if (reader.HasRows)
                 {
                     while (reader.Read())
                     {
-                        ArrayList Debug = new ArrayList();
-
-                        Debug.Add(reader.GetString(0));
                         var model = new Модели_И_Их_Характеристики_Поля()
                         {
-                            Название_модели = reader.GetString(0),
-                            Слот_MicroSD = reader.GetBoolean(4),
+                            ID_Модели = reader.GetInt32(0),
+                            Название_модели = reader.GetString(1),
+                            Слот_MicroSD = reader.GetBoolean(5),
+                            Количество_SIM = reader.GetInt32(10),
                         };
 
-                        if (!reader.IsDBNull(1))
-                            model.Год_выпуска_модели = (DateTime?)Convert.ToDateTime(reader.GetValue(1));
                         if (!reader.IsDBNull(2))
-                            model.ОЗУ = (double?)Convert.ToDouble(reader.GetValue(2));
+                            model.Год_выпуска_модели = (DateTime?)Convert.ToDateTime(reader.GetValue(2));
                         if (!reader.IsDBNull(3))
-                            model.Количество_встроенной_памяти = (double?)Convert.ToDouble(reader.GetValue(3));
-                        if (!reader.IsDBNull(5))
-                            model.ОС = (string?)reader.GetValue(5);
+                            model.ОЗУ = (double?)Convert.ToDouble(reader.GetValue(3));
+                        if (!reader.IsDBNull(4))
+                            model.Количество_встроенной_памяти = (double?)Convert.ToDouble(reader.GetValue(4));
                         if (!reader.IsDBNull(6))
-                            model.Версия_ОС = (string?)reader.GetValue(6);
+                            model.ОС = (string?)reader.GetValue(6);
                         if (!reader.IsDBNull(7))
-                            model.Разрешение_камеры = (double?)Convert.ToDouble(reader.GetValue(7));
+                            model.Версия_ОС = (string?)reader.GetValue(7);
                         if (!reader.IsDBNull(8))
-                            model.Емкость_аккумулятора = (int?)Convert.ToInt32(reader.GetValue(8));
+                            model.Разрешение_камеры = (double?)Convert.ToDouble(reader.GetValue(8));
                         if (!reader.IsDBNull(9))
-                            model.Количество_SIM = (int?)Convert.ToInt32(reader.GetValue(9));
-                        if (!reader.IsDBNull(10))
-                            model.Длинна = (double?)Convert.ToDouble(reader.GetValue(10));
+                            model.Емкость_аккумулятора = (int?)Convert.ToInt32(reader.GetValue(9));
                         if (!reader.IsDBNull(11))
-                            model.Ширина = (double?)Convert.ToDouble(reader.GetValue(11));
+                            model.Длинна = (double?)Convert.ToDouble(reader.GetValue(11));
                         if (!reader.IsDBNull(12))
-                            model.Толщина = (double?)Convert.ToDouble(reader.GetValue(12));
+                            model.Ширина = (double?)Convert.ToDouble(reader.GetValue(12));
                         if (!reader.IsDBNull(13))
-                            model.Вес = (double?)Convert.ToDouble(reader.GetValue(13));
+                            model.Толщина = (double?)Convert.ToDouble(reader.GetValue(13));
+                        if (!reader.IsDBNull(14))
+                            model.Вес = (double?)Convert.ToDouble(reader.GetValue(14));
                         list.Add(model);
-
-                        Debug.Clear();
                     }
                 }
                 return list;
             }
         }
+
+        public void Update(Модели_И_Их_Характеристики_Поля item)
+        {
+            using (var db = new DBController())
+            {
+                db.ExecuteNonQueryCommand($"exec UpdateLine_Модели_И_Их_Характеристики " +
+                    $"{item.ID_Модели}, " +
+                    $"{((item.Название_модели == null) ? "NULL" : $"N\'{item.Название_модели}\'")}, " +
+                    $"{((item.Год_выпуска_модели == null) ? "NULL" : $"\'{item.Год_выпуска_модели.ToString()}\'")}, " +
+                    $"{((item.ОЗУ == null) ? "NULL" : $"{ReplaceComaToDot(item.ОЗУ)}")}, " +
+                    $"{((item.Количество_встроенной_памяти == null) ? "NULL" : $"{ReplaceComaToDot(item.Количество_встроенной_памяти)}")}, " +
+                    $"\'{item.Слот_MicroSD}\', " +
+                    $"{((item.ОС == null) ? "NULL" : $"N\'{item.ОС}\'")}, " +
+                    $"{((item.Версия_ОС == null) ? "NULL" : $"N\'{item.Версия_ОС}\'")}, " +
+                    $"{((item.Разрешение_камеры == null) ? "NULL" : $"{ReplaceComaToDot(item.Разрешение_камеры)}")}, " +
+                    $"{((item.Емкость_аккумулятора == null) ? "NULL" : $"{item.Емкость_аккумулятора.ToString()}")}, " +
+                    $"\'{item.Количество_SIM}\', " +
+                    $"{((item.Длинна == null) ? "NULL" : $"{ReplaceComaToDot(item.Длинна)}")}, " +
+                    $"{((item.Ширина == null) ? "NULL" : $"{ReplaceComaToDot(item.Ширина)}")}, " +
+                    $"{((item.Толщина == null) ? "NULL" : $"{ReplaceComaToDot(item.Толщина)}")}, " +
+                    $"{((item.Вес == null) ? "NULL" : $"{ReplaceComaToDot(item.Вес)}")}");
+            }
+        }
+
+        private string GetDate(DateTime date)
+        {
+            return $"{date.Day}/{date.Month}/{date.Year}";
+        }
+        private string GetDate(DateTime? date)
+        {
+            if (date == null)
+                return null;
+            else
+                return GetDate(Convert.ToDateTime(date));
+        }
+        private string ReplaceComaToDot(double? number)
+        {
+            return number.ToString().Replace(',', '.');
+        }
     }
 
     class Модели_И_Их_Характеристики_Поля
     {
+        public int ID_Модели { get; set; }
         public string Название_модели { get; set; }
         public DateTime? Год_выпуска_модели { get; set; }
         public double? ОЗУ { get; set; }
@@ -76,7 +156,7 @@ namespace ARM_Of_Phone_seller_PROJECT.Database_Logic.Таблицы_БД
         public string? Версия_ОС { get; set; }
         public double? Разрешение_камеры { get; set; }
         public int? Емкость_аккумулятора { get; set; }
-        public int? Количество_SIM { get; set; }
+        public int Количество_SIM { get; set; }
         public double? Длинна { get; set; }
         public double? Ширина { get; set; }
         public double? Толщина { get; set; }
@@ -272,27 +352,6 @@ namespace ARM_Of_Phone_seller_PROJECT.Database_Logic.Таблицы_БД
                 }
             }
 
-        }
-        public string Количество_SIM_DataGridBinding
-        {
-            get
-            {
-                if (Количество_SIM == null)
-                    return "Нет данных";
-                else
-                    return $"{Количество_SIM}";
-            }
-            set
-            {
-                try
-                {
-                    Количество_SIM = int.Parse(value);
-                }
-                catch (Exception)
-                {
-                    Количество_SIM = null;
-                }
-            }
         }
         public string Длинна_DataGridBinding
         {

@@ -132,7 +132,7 @@
                 </Grid>
             </StackPanel>
         </ScrollViewer>
-        <DataGrid x:Name="CatalogGrid" Margin="0,0,0,0.4" IsSynchronizedWithCurrentItem="True" AutoGenerateColumns="False" Background="#FF1E1E1E" CanUserReorderColumns="False" HeadersVisibility="Column" SelectionChanged="CatalogGrid_SelectionChanged">
+        <DataGrid x:Name="CatalogGrid" Margin="0,0,0,0.4" IsSynchronizedWithCurrentItem="True" AutoGenerateColumns="False" Background="#FF1E1E1E" CanUserReorderColumns="False" HeadersVisibility="Column" SelectionChanged="CatalogGrid_SelectionChanged" EnableRowVirtualization="False" CanUserAddRows="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Название модели" Binding="{Binding Название_модели}"/>
                 <DataGridTextColumn Header="Год выпуска модели" Binding="{Binding Год_Выпуска_Модели_DataGridBinding}"/>
@@ -143,7 +143,7 @@
                 <DataGridTextColumn Header="Версия ОС" Binding="{Binding Версия_ОС_DataGridBinding}" />
                 <DataGridTextColumn Header="Разрешение камеры" Binding="{Binding Разрешение_камеры_DataGridBinding}"/>
                 <DataGridTextColumn Header="Емкость аккумулятора" Binding="{Binding Емкость_аккумулятора_DataGridBinding}"/>
-                <DataGridTextColumn Header="Количество SIM" Binding="{Binding Количество_SIM_DataGridBinding}"/>
+                <DataGridTextColumn Header="Количество SIM" Binding="{Binding Количество_SIM}"/>
                 <DataGridTextColumn Header="Длинна" Binding="{Binding Длинна_DataGridBinding}"/>
                 <DataGridTextColumn Header="Ширина" Binding="{Binding Ширина_DataGridBinding}"/>
                 <DataGridTextColumn Header="Толщина" Binding="{Binding Толщина_DataGridBinding}"/>
@@ -154,6 +154,20 @@
             <StackPanel Orientation="Horizontal" Height="35">
                 <Image Source="pack://application:,,,/Icons/OK.png" Width="36"/>
                 <TextBlock Width="156" TextAlignment="Center" Text="Сохранить и обновить" Margin="0,0,0,0.2" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="ShowFirst" Content="Первая" HorizontalAlignment="Left" Margin="10,4.6,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Click="ShowFirst_Click"/>
+        <Button x:Name="ShowPrevious" Content="Предыдущая" HorizontalAlignment="Left" Margin="10,28.6,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Click="ShowPrevious_Click"/>
+        <Button x:Name="ShowLast" Content="Последняя" HorizontalAlignment="Left" Margin="90,4.6,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Click="ShowLast_Click"/>
+        <Button x:Name="ShowNext" Content="Следующая" HorizontalAlignment="Left" Margin="90,28.6,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Click="ShowNext_Click"/>
+        <Button x:Name="DeleteEntry" HorizontalAlignment="Left" Margin="272,5.6,0,0" Grid.Row="1" VerticalAlignment="Top" Width="129" Height="43" Click="DeleteEntry_Click">
+            <StackPanel Orientation="Horizontal" Height="35">
+                <TextBlock Width="117" TextAlignment="Center" Margin="0,2,0,1.2" VerticalAlignment="Center"><Run Text="Удалить"/><LineBreak/><Run Text="выбранную строку"/></TextBlock>
+            </StackPanel>
+        </Button>
+        <Button x:Name="AddEntry" HorizontalAlignment="Left" Margin="170,4.6,0,0" Grid.Row="1" VerticalAlignment="Top" Width="97" Height="43" Click="AddEntry_Click">
+            <StackPanel Orientation="Horizontal" Height="35">
+                <TextBlock Width="92" TextAlignment="Center" Margin="0,2,0,1.2" VerticalAlignment="Center"><Run Text="Добавить"/><LineBreak/><Run Text="пустую строку"/></TextBlock>
             </StackPanel>
         </Button>
 

@@ -30,44 +30,13 @@ namespace ARM_Of_Phone_seller_PROJECT
 
         private void SaveChanges_Click(object sender, RoutedEventArgs e)
         {
-            //foreach (var item in CatalogGrid.ItemsSource)
-            //{
-            //    var data = item as Модели_И_Их_Характеристики_Поля;
-
-            //    if (IsEverythingEmpty(data))
-            //        МоделиView.Delete(data);
-            //    else if (data. != 0)
-            //        МоделиView.Update(item as Модели_И_Их_Характеристики_Поля);
-            //    else
-            //        МоделиView.Insert(data);
-            //}
-            //CatalogGrid.ItemsSource = МоделиView.Select();
-            MessageBox.Show("WIP");
+            foreach (var item in CatalogGrid.ItemsSource)
+            {
+                var data = item as Модели_И_Их_Характеристики_Поля;
+                МоделиView.Update(item as Модели_И_Их_Характеристики_Поля);
+            }
+            CatalogGrid.ItemsSource = МоделиView.Select();
         }
-
-        private bool IsEverythingEmpty(Модели_И_Их_Характеристики_Поля data)
-        {
-            if (
-                    data.Версия_ОС == "" &&
-                    data.Вес == null &&
-                    data.Год_выпуска_модели == null &&
-                    data.Длинна == null &&
-                    data.Емкость_аккумулятора == null &&
-                    data.Количество_SIM == null &&
-                    data.Количество_встроенной_памяти == null &&
-                    data.Название_модели == null &&
-                    data.ОЗУ == null &&
-                    data.ОС == "" &&
-                    data.Разрешение_камеры == null &&
-                    data.Слот_MicroSD == false &&
-                    data.Толщина == null &&
-                    data.Ширина == null
-                )
-                return true;
-            else
-                return false;
-        }
-
         private void CatalogGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var item = CatalogGrid.SelectedItem as Модели_И_Их_Характеристики_Поля;
@@ -81,11 +50,43 @@ namespace ARM_Of_Phone_seller_PROJECT
             Form_ВерсияОС.Content = "Версия ОС: " + item.Версия_ОС_DataGridBinding;
             Form_Камера.Content = "Разрешение камеры: " + item.Разрешение_камеры_DataGridBinding;
             Form_ЕмкостьАккума.Content = "Емкость аккумулятора: " + item.Емкость_аккумулятора_DataGridBinding;
-            Form_КолвоSIM.Content = "Количество SIM: " + item.Количество_SIM_DataGridBinding;
+            Form_КолвоSIM.Content = "Количество SIM: " + item.Количество_SIM;
             Form_Длинна.Content = "Длинна: " + item.Длинна_DataGridBinding;
             Form_Ширина.Content = "Ширина: " + item.Ширина_DataGridBinding;
             Form_Толщина.Content = "Толщина: " + item.Толщина_DataGridBinding;
             Form_Вес.Content = "Вес: " + item.Вес_DataGridBinding;
+        }
+        private void ShowFirst_Click(object sender, RoutedEventArgs e)
+        {
+            CatalogGrid.SelectedIndex = 0;
+        }
+        private void ShowLast_Click(object sender, RoutedEventArgs e)
+        {
+            CatalogGrid.SelectedIndex = CatalogGrid.Items.Count-2;
+        }
+        private void ShowPrevious_Click(object sender, RoutedEventArgs e)
+        {
+            CatalogGrid.SelectedIndex--;
+        }
+        private void ShowNext_Click(object sender, RoutedEventArgs e)
+        {
+            CatalogGrid.SelectedIndex++;
+        }
+        private void DeleteEntry_Click(object sender, RoutedEventArgs e)
+        {
+            var item = CatalogGrid.SelectedItem as Модели_И_Их_Характеристики_Поля;
+
+            if (item == null)
+            {
+                return;
+            }
+            МоделиView.Delete(item);
+            CatalogGrid.ItemsSource = МоделиView.Select();
+        }
+        private void AddEntry_Click(object sender, RoutedEventArgs e)
+        {
+            МоделиView.InsertEmptyEntry();
+            CatalogGrid.ItemsSource = МоделиView.Select();
         }
     }
 }
