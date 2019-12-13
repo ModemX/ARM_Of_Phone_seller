@@ -162,12 +162,15 @@
                         <SolidColorBrush Color="White" Opacity="1"/>
                     </Rectangle.Stroke>
                 </Rectangle>
-                <Label Content="Статус:" HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Top" Foreground="White" RenderTransformOrigin="0.313,0.578"/>
-                <ComboBox x:Name="Статус_ComboBox" Margin="155,13,10.4,10" Background="#FF1E1E1E" Foreground="White">
-                    <ComboBox.BorderBrush>
-                        <SolidColorBrush Color="White" Opacity="0.75"/>
-                    </ComboBox.BorderBrush>
-                </ComboBox>
+                <Label Content="Должность:" HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Top" Foreground="White" RenderTransformOrigin="0.313,0.578"/>
+                <TextBox x:Name="Статус_TextBox" Height="23" Margin="155,12,9.4,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Foreground="White">
+                    <TextBox.Background>
+                        <SolidColorBrush Color="White" Opacity="0"/>
+                    </TextBox.Background>
+                    <TextBox.BorderBrush>
+                        <SolidColorBrush Color="White" Opacity="0.25"/>
+                    </TextBox.BorderBrush>
+                </TextBox>
             </Grid>
             <Grid Height="45" Margin="0,0,170.4,10">
                 <Rectangle Margin="0,0,0.4,0" RadiusY="17.891" RadiusX="17.891" StrokeThickness="2">

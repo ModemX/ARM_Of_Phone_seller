@@ -29,13 +29,14 @@ namespace ARM_Of_Phone_seller_PROJECT.Frames.Основная_область
 
         private void AddUser_Button_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            AddUserWindow addUserWindow = new AddUserWindow();
+            AddUserWindow addUserWindow = new AddUserWindow(null);
             addUserWindow.ShowDialog();
         }
 
         private void EditUser_Button_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-
+            AddUserWindow addUserWindow = new AddUserWindow(UsersGrid.SelectedItem);
+            addUserWindow.ShowDialog();
         }
 
         private void DeleteUser_Button_Click(object sender, System.Windows.RoutedEventArgs e)

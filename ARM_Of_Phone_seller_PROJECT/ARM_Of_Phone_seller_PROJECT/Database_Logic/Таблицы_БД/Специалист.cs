@@ -50,7 +50,6 @@ namespace ARM_Of_Phone_seller_PROJECT.Model
                 db.ExecuteNonQueryCommand($"DELETE FROM Специалист WHERE id = {item.ID_Специалиста}");
             }
         }
-
         public void Insert(Специалист_Поля item)
         {
             using (var db = new DBController())
@@ -58,7 +57,6 @@ namespace ARM_Of_Phone_seller_PROJECT.Model
                 db.ExecuteNonQueryCommand($"INSERT INTO Специалист VALUES ({item.ID_Специалиста}, \'{item.Логин}\', \'{item.Пароль}\', {item.Телефон}, \'{item.Статус}\', \'{item.Фамилия}\', \'{item.Имя}\', \'{item.Отчество}\', {GetDate(item.Дата_рождения)}, \'{item.Основание_работы}\', {item.Администратор})");
             }
         }
-
         public IEnumerable<Специалист_Поля> Select()
         {
             using (var db = new DBController())
@@ -89,7 +87,6 @@ namespace ARM_Of_Phone_seller_PROJECT.Model
                 return list;
             }
         }
-
         public void Update(Специалист_Поля item)
         {
             using (var db = new DBController())
@@ -97,6 +94,7 @@ namespace ARM_Of_Phone_seller_PROJECT.Model
                 db.ExecuteNonQueryCommand($"UPDATE Специалист SET ID_Специалиста = {item.ID_Специалиста}, Логин = \'{item.Логин}\', Пароль = \'{item.Пароль}\', Телефон = {item.Телефон}, Статус = \'{item.Статус}\', Фамилия = \'{item.Фамилия}\', Имя = \'{item.Имя}\', Отчество = \'{item.Отчество}\', Дата_рождения = {item.Дата_рождения}, Основание_работы = \'{item.Основание_работы}\', Администратор = {item.Администратор}");
             }
         }
+
         private string GetDate(DateTime date)
         {
             return $"{date.Day}/{date.Month}/{date.Year}";
