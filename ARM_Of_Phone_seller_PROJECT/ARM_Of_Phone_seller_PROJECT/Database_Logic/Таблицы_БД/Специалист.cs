@@ -17,6 +17,29 @@ namespace ARM_Of_Phone_seller_PROJECT.Model
         public DateTime Дата_рождения { get; set; }
         public string Основание_работы { get; set; }
         public bool Администратор { get; set; }
+
+        /*Для DataGrid*/
+        public string Дата_рождения_DataGridView
+        {
+            get
+            {
+                return $"" +
+                    $"{((Дата_рождения.Day < 10) ? $"0{Дата_рождения.Day}" : $"{Дата_рождения.Day}")}." +
+                    $"{((Дата_рождения.Month < 10) ? $"0{Дата_рождения.Month}" : $"{Дата_рождения.Month}")}." +
+                    $"{Дата_рождения.Year}";
+            }
+            set 
+            {
+                try
+                {
+                    Дата_рождения = Convert.ToDateTime(value);
+                }
+                catch (Exception)
+                {
+                    Дата_рождения = new DateTime(2019, 01, 01);
+                }
+            }
+        }
     }
     public class СпециалистModel : IModel<Специалист_Поля>
     {

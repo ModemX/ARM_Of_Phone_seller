@@ -64,6 +64,15 @@
     <Compile Include="Database_Logic\Таблицы_БД\Товар.cs" />
     <Compile Include="Database_Logic\Таблицы_БД\Характеристики.cs" />
     <Compile Include="Database_Logic\Таблицы_БД\Цвета.cs" />
+    <Compile Include="Frames\Основная область\Контроль_пользователей.xaml.cs">
+      <DependentUpon>Контроль_пользователей.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\Основная область\Реализация_товара.xaml.cs">
+      <DependentUpon>Реализация_товара.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Add_Edit_UserWindow.xaml.cs">
+      <DependentUpon>Add_Edit_UserWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\Catalog.xaml.cs">
       <DependentUpon>Catalog.xaml</DependentUpon>
     </Compile>
@@ -78,6 +87,18 @@
     <Compile Include="Frames\Основная область\Изменение_Источника.xaml.cs">
       <DependentUpon>Изменение_Источника.xaml</DependentUpon>
     </Compile>
+    <Page Include="Frames\Основная область\Контроль_пользователей.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Frames\Основная область\Реализация_товара.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Add_Edit_UserWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\Catalog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -145,6 +166,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Database_Logic\SQL_DB_Creation.sql" />
+    <Resource Include="Icons\Label.png" />
+    <Resource Include="Icons\List.png" />
+    <Resource Include="Icons\Search.png" />
+    <Resource Include="Icons\Back.png" />
+    <Resource Include="Icons\Chart.png" />
+    <Resource Include="Icons\Shopping.png" />
+    <Resource Include="Icons\ConfigureUser.png" />
+    <Resource Include="Icons\AddUser.png" />
+    <Resource Include="Icons\RemoveUser.png" />
+    <Resource Include="Icons\User.png" />
     <Resource Include="Icons\App.ico" />
     <Resource Include="Icons\Catalog.png" />
     <Resource Include="Icons\Deny.png" />

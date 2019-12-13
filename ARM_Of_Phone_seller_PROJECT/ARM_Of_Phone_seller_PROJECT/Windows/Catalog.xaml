@@ -132,7 +132,7 @@
                 </Grid>
             </StackPanel>
         </ScrollViewer>
-        <DataGrid x:Name="CatalogGrid" Margin="0,0,0,0.4" IsSynchronizedWithCurrentItem="True" AutoGenerateColumns="False" Background="#FF1E1E1E" CanUserReorderColumns="False" HeadersVisibility="Column" SelectionChanged="CatalogGrid_SelectionChanged" EnableRowVirtualization="False" CanUserAddRows="False">
+        <DataGrid x:Name="CatalogGrid" Margin="0,0,0,0.4" IsSynchronizedWithCurrentItem="True" AutoGenerateColumns="False" Background="#FF1E1E1E" CanUserReorderColumns="False" HeadersVisibility="Column" SelectionChanged="CatalogGrid_SelectionChanged" EnableRowVirtualization="False" CanUserAddRows="False" BorderBrush="{x:Null}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Название модели" Binding="{Binding Название_модели}"/>
                 <DataGridTextColumn Header="Год выпуска модели" Binding="{Binding Год_Выпуска_Модели_DataGridBinding}"/>

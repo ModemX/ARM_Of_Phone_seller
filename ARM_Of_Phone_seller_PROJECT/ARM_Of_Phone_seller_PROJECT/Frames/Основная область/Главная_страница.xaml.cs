@@ -1,23 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ARM_Of_Phone_seller_PROJECT.Frames.Основная_область;
+using ARM_Of_Phone_seller_PROJECT.View.Информационная_панель;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace ARM_Of_Phone_seller_PROJECT.View
 {
-    /// <summary>
-    /// Логика взаимодействия для Главная_страница.xaml
-    /// </summary>
     public partial class Главная_страница : Page
     {
         MainWindow mainWindow;
@@ -32,6 +19,17 @@ namespace ARM_Of_Phone_seller_PROJECT.View
         {
             catalog = new Catalog();
             catalog.ShowDialog();
+        }
+
+        private void UserContol_Button_Click(object sender, RoutedEventArgs e)
+        {
+            Switcher.SetStateOfMainWindow(new Главная_страница(mainWindow));
+            Switcher.SetStateOfAdditionalWindow(new Информация_о_входе_Главная_панель(mainWindow));
+        }
+
+        private void SellItemWindow_Click(object sender, RoutedEventArgs e)
+        {
+            Switcher.SetStateOfMainWindow(new Реализация_товара(mainWindow));
         }
     }
 }

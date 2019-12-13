@@ -23,3 +23,9 @@ D:\Репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of
 D:\Репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\obj\Debug\Windows\MainWindow.baml
 D:\Репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\obj\Debug\Frames\Основная область\Главная_страница.baml
 D:\Репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\obj\Debug\Frames\Основная область\Изменение_Источника.baml
+D:\Репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\obj\Debug\Frames\Основная область\Контроль_пользователей.g.cs
+D:\Репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\obj\Debug\Frames\Основная область\Контроль_пользователей.baml
+D:\Репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\obj\Debug\Frames\Основная область\Реализация_товара.g.cs
+D:\Репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\obj\Debug\Frames\Основная область\Реализация_товара.baml
+D:\Репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\obj\Debug\Windows\Add_Edit_UserWindow.g.cs
+D:\Репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\obj\Debug\Windows\Add_Edit_UserWindow.baml

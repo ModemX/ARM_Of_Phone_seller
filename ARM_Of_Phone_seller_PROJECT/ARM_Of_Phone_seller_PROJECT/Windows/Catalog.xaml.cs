@@ -14,10 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 namespace ARM_Of_Phone_seller_PROJECT
-{
-    /// <summary>
-    /// Логика взаимодействия для Catalog.xaml
-    /// </summary>
+{ 
     public partial class Catalog : Window
     {
         Вызов_представлений_Базы_данных МоделиView = new Вызов_представлений_Базы_данных();

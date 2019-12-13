@@ -26,33 +26,33 @@
                 <TextBlock TextAlignment="Center" FontSize="18" Margin="10,0,10.2,0" FontWeight="Bold"><Run Text="Просмотреть "/><LineBreak/><Run Text="каталог"/></TextBlock>
             </StackPanel>
         </Button>
-        <Button x:Name="Placeholder1" HorizontalAlignment="Left" Margin="56.2,32,0,0" VerticalAlignment="Top" Width="209" Height="154" Grid.Column="1" IsEnabled="False">
+        <Button x:Name="SellItemWindow" HorizontalAlignment="Left" Margin="56.2,32,0,0" VerticalAlignment="Top" Width="209" Height="154" Grid.Column="1" Click="SellItemWindow_Click">
             <StackPanel Orientation="Vertical" Height="144" Width="199">
-                <Image Source="pack://application:,,,/Icons/Deny.png" Height="71" Margin="49,13,49.2,10"/>
-                <TextBlock TextAlignment="Center" FontSize="18" Margin="10,0,10.2,0" FontWeight="Bold" Text="Контроль доступа"></TextBlock>
+                <Image Source="pack://application:,,,/Icons/Shopping.png" Height="86" Margin="49,13,49.2,10"/>
+                <TextBlock TextAlignment="Center" FontSize="18" Margin="10,0,10.2,0" FontWeight="Bold" Text="Реализация товара"></TextBlock>
             </StackPanel>
         </Button>
         <Button x:Name="Placeholder2" HorizontalAlignment="Left" Margin="66.4,32,0,0" VerticalAlignment="Top" Width="209" Height="154" Grid.Column="2" IsEnabled="False">
             <StackPanel Orientation="Vertical" Height="144" Width="199">
-                <Image Source="pack://application:,,,/Icons/Deny.png" Height="71" Margin="49,13,49.2,10"/>
+                <Image Source="pack://application:,,,/Icons/List.png" Height="71" Margin="49,13,49.2,10"/>
                 <TextBlock TextAlignment="Center" FontSize="18" Margin="10,0,10.2,0" FontWeight="Bold"><Run Text="Изменение"/><LineBreak/><Run Text="ассортимента"/></TextBlock>
             </StackPanel>
         </Button>
         <Button x:Name="Placeholder3" HorizontalAlignment="Left" Margin="50,31,0,0" VerticalAlignment="Top" Width="209" Height="154" Grid.Row="1" IsEnabled="False">
             <StackPanel Orientation="Vertical" Height="144" Width="199">
-                <Image Source="pack://application:,,,/Icons/Deny.png" Height="71" Margin="49,13,49.2,10"/>
+                <Image Source="pack://application:,,,/Icons/User.png" Height="89" Margin="49,13,49.2,10"/>
                 <TextBlock TextAlignment="Center" FontSize="18" Margin="10,0,10.2,0" FontWeight="Bold" Text="База клиентов"></TextBlock>
             </StackPanel>
         </Button>
         <Button x:Name="Placeholder4" HorizontalAlignment="Left" Margin="56.2,31,0,0" VerticalAlignment="Top" Width="209" Height="154" Grid.Column="1" Grid.Row="1" IsEnabled="False">
             <StackPanel Orientation="Vertical" Height="144" Width="199">
-                <Image Source="pack://application:,,,/Icons/Deny.png" Height="71" Margin="49,13,49.2,10"/>
+                <Image Source="pack://application:,,,/Icons/Label.png" Height="90" Margin="49,13,49.2,10"/>
                 <TextBlock TextAlignment="Center" FontSize="18" Margin="10,0,10.2,0" FontWeight="Bold" Text="Текущие акции"></TextBlock>
             </StackPanel>
         </Button>
         <Button x:Name="Placeholder5" HorizontalAlignment="Left" Margin="66.4,31,0,0" VerticalAlignment="Top" Width="209" Height="154" Grid.Column="2" Grid.Row="1" IsEnabled="False">
             <StackPanel Orientation="Vertical" Height="144" Width="199">
-                <Image Source="pack://application:,,,/Icons/Deny.png" Height="71" Margin="49,13,49.2,10"/>
+                <Image Source="pack://application:,,,/Icons/Chart.png" Height="93" Margin="49,13,49.2,10"/>
                 <TextBlock TextAlignment="Center" FontSize="18" Margin="10,0,10.2,0" FontWeight="Bold" Text="Статистика"></TextBlock>
             </StackPanel>
         </Button>
