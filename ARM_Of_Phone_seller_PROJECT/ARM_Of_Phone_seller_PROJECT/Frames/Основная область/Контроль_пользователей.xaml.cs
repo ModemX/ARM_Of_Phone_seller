@@ -31,17 +31,20 @@ namespace ARM_Of_Phone_seller_PROJECT.Frames.Основная_область
         {
             AddUserWindow addUserWindow = new AddUserWindow(null);
             addUserWindow.ShowDialog();
+            UsersGrid.ItemsSource = специалистModel.Select();
         }
 
         private void EditUser_Button_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             AddUserWindow addUserWindow = new AddUserWindow(UsersGrid.SelectedItem);
             addUserWindow.ShowDialog();
+            UsersGrid.ItemsSource = специалистModel.Select();
         }
 
         private void DeleteUser_Button_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-
+            специалистModel.Delete(UsersGrid.SelectedItem as Специалист_Поля);
+            UsersGrid.ItemsSource = специалистModel.Select();
         }
     }
 }

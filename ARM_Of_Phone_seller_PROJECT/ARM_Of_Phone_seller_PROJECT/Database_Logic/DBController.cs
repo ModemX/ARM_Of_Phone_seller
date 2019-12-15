@@ -9,18 +9,17 @@ namespace ARM_Of_Phone_seller_PROJECT.Database_Logic
 {
     class DBController : IDisposable
     {
-        private static string db = "ARM_Of_Phone_Seller";
-        private static string user = "SADMODSNOTEBOOK\\SQLEXPRESS";
+        private static string db = Properties.Settings.Default.ИмяСервера;
+        private static string user = Properties.Settings.Default.ИмяПользователя;
         public static string DBController_DBName { get => db; set => db = value; }
         public static string DBController_User { get => user; set => user = value; }
         private static string Path
         {
             get
             {
-                return $"Data Source={DBController_User};Initial Catalog={DBController_DBName};Integrated Security=True";
+                return $"Data Source={Properties.Settings.Default.ИмяПользователя};Initial Catalog={Properties.Settings.Default.ИмяСервера};Integrated Security=True";
             }
         }
-
 
         SqlConnection connection;
 

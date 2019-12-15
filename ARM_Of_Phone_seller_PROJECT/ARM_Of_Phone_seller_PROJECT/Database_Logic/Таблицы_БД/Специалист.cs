@@ -47,14 +47,14 @@ namespace ARM_Of_Phone_seller_PROJECT.Model
         {
             using (var db = new DBController())
             {
-                db.ExecuteNonQueryCommand($"DELETE FROM Специалист WHERE id = {item.ID_Специалиста}");
+                db.ExecuteNonQueryCommand($"DELETE FROM Специалист WHERE ID_Специалиста = {item.ID_Специалиста}");
             }
         }
         public void Insert(Специалист_Поля item)
         {
             using (var db = new DBController())
             {
-                db.ExecuteNonQueryCommand($"INSERT INTO Специалист VALUES ({item.ID_Специалиста}, \'{item.Логин}\', \'{item.Пароль}\', {item.Телефон}, \'{item.Статус}\', \'{item.Фамилия}\', \'{item.Имя}\', \'{item.Отчество}\', {GetDate(item.Дата_рождения)}, \'{item.Основание_работы}\', {item.Администратор})");
+                db.ExecuteNonQueryCommand($"INSERT INTO Специалист VALUES (N\'{item.Логин}\', N\'{item.Пароль}\', {item.Телефон}, N\'{item.Статус}\', N\'{item.Фамилия}\', N\'{item.Имя}\', N\'{item.Отчество}\', \'{GetDate(item.Дата_рождения)}\', N\'{item.Основание_работы}\', \'{item.Администратор.ToString().ToLower()}\')");
             }
         }
         public IEnumerable<Специалист_Поля> Select()
@@ -91,7 +91,7 @@ namespace ARM_Of_Phone_seller_PROJECT.Model
         {
             using (var db = new DBController())
             {
-                db.ExecuteNonQueryCommand($"UPDATE Специалист SET ID_Специалиста = {item.ID_Специалиста}, Логин = \'{item.Логин}\', Пароль = \'{item.Пароль}\', Телефон = {item.Телефон}, Статус = \'{item.Статус}\', Фамилия = \'{item.Фамилия}\', Имя = \'{item.Имя}\', Отчество = \'{item.Отчество}\', Дата_рождения = {item.Дата_рождения}, Основание_работы = \'{item.Основание_работы}\', Администратор = {item.Администратор}");
+                db.ExecuteNonQueryCommand($"UPDATE Специалист SET Логин = N\'{item.Логин}\', Пароль = N\'{item.Пароль}\', Телефон = {item.Телефон}, Статус = N\'{item.Статус}\', Фамилия = N\'{item.Фамилия}\', Имя = N\'{item.Имя}\', Отчество = N\'{item.Отчество}\', Дата_рождения = \'{GetDate(item.Дата_рождения)}\', Основание_работы = N\'{item.Основание_работы}\', Администратор = \'{item.Администратор.ToString().ToLower()}\' where ID_Специалиста = {item.ID_Специалиста}");
             }
         }
 
@@ -99,5 +99,6 @@ namespace ARM_Of_Phone_seller_PROJECT.Model
         {
             return $"{date.Day}/{date.Month}/{date.Year}";
         }
+
     }
 }

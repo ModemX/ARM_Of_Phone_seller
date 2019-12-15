@@ -1,7 +1,12 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ARM_Of_Phone_seller_PROJECT.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ИмяСервера" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ARM_Of_Phone_Seller</Value>
+    </Setting>
+    <Setting Name="ИмяПользователя" Type="System.String" Scope="User">
+      <Value Profile="(Default)">SADMODSNOTEBOOK\SQLEXPRESS</Value>
+    </Setting>
+  </Settings>
 </SettingsFile>

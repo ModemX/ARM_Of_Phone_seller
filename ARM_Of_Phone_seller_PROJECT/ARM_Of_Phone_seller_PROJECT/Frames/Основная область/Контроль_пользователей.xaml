@@ -15,6 +15,7 @@
         </Grid.ColumnDefinitions>
         <DataGrid x:Name="UsersGrid" Background="{x:Null}" IsSynchronizedWithCurrentItem="False" Margin="10,0,9.8,10" AutoGenerateColumns="False" SelectionChanged="UsersGrid_SelectionChanged" CanUserAddRows="False">
             <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding ID_Специалиста}" MinWidth="100" IsReadOnly="True" Visibility="Hidden"/>
                 <DataGridTextColumn Header="Фамилия" Binding="{Binding Фамилия}" MinWidth="100" IsReadOnly="True"/>
                 <DataGridTextColumn Header="Имя" Binding="{Binding Имя}" MinWidth="100" IsReadOnly="True"/>
                 <DataGridTextColumn Header="Отчество" Binding="{Binding Отчество}" MinWidth="100" IsReadOnly="True"/>

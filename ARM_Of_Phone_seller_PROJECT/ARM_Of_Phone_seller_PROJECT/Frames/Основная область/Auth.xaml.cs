@@ -1,4 +1,5 @@
-﻿using ARM_Of_Phone_seller_PROJECT.Model;
+﻿using ARM_Of_Phone_seller_PROJECT.Database_Logic;
+using ARM_Of_Phone_seller_PROJECT.Model;
 using ARM_Of_Phone_seller_PROJECT.View;
 using ARM_Of_Phone_seller_PROJECT.View.Информационная_панель;
 using System;
@@ -21,20 +22,10 @@ namespace ARM_Of_Phone_seller_PROJECT
             mainWindow = _mainWindow;
         }
 
-        private string Hashing(string data)
-        {
-            string hash = "";
-            using (MD5 md5Hash = MD5.Create())
-            {
-                hash = GetMd5Hash(md5Hash, data);
-            }
-            return hash.ToUpper();
-        }
-
         private void Auth_Button_Login_Click(object sender, RoutedEventArgs e)
         {
             var list = model.Select().ToList();
-            var hash = Hashing(Auth_Password.Password);
+            var hash = HashingClass.Hashing(Auth_Password.Password);
             Специалист_Поля User;
             if ((User = list.FirstOrDefault(it => it.Логин == Auth_Login.Text && it.Пароль == hash)) != null)
             {
@@ -57,31 +48,6 @@ namespace ARM_Of_Phone_seller_PROJECT
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Switcher.SetStateOfMainWindow(new Изменение_Источника(mainWindow));
-        }
-
-        static string GetMd5Hash(MD5 md5Hash, string input)
-        {
-            byte[] data = md5Hash.ComputeHash(Encoding.UTF8.GetBytes(input));
-            StringBuilder sBuilder = new StringBuilder();
-            for (int i = 0; i < data.Length; i++)
-            {
-                sBuilder.Append(data[i].ToString("x2"));
-            }
-            return sBuilder.ToString();
-        }
-
-        static bool VerifyMd5Hash(MD5 md5Hash, string input, string hash)
-        {
-            string hashOfInput = GetMd5Hash(md5Hash, input);
-            StringComparer comparer = StringComparer.OrdinalIgnoreCase;
-            if (0 == comparer.Compare(hashOfInput, hash))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
         }
 
         private void Auth_Password_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)

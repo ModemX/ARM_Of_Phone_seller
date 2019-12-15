@@ -33,8 +33,10 @@ namespace ARM_Of_Phone_seller_PROJECT.View
 
         private void Accept_Click(object sender, RoutedEventArgs e)
         {
-            DBController.DBController_DBName = TextBox_DBName.Text;
-            DBController.DBController_User = TextBox_User.Text;
+            Properties.Settings.Default.ИмяПользователя = TextBox_User.Text;
+            Properties.Settings.Default.ИмяСервера = TextBox_DBName.Text;
+            Properties.Settings.Default.Save(); // Сохраняем переменные.
+
             Switcher.SetStateOfMainWindow(new Auth(mainWindow));
         }
 
