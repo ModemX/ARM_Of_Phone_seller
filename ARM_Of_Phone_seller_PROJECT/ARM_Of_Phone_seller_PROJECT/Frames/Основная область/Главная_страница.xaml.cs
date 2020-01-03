@@ -31,5 +31,10 @@ namespace ARM_Of_Phone_seller_PROJECT.View
         {
             Switcher.SetStateOfMainWindow(new Реализация_товара(mainWindow));
         }
+
+        private void Clients_Button_Click(object sender, RoutedEventArgs e)
+        {
+            Switcher.SetStateOfMainWindow(new Клиенты(mainWindow));
+        }
     }
 }

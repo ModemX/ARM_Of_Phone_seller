@@ -44,5 +44,17 @@ namespace ARM_Of_Phone_seller_PROJECT.View
         {
             Switcher.SetStateOfMainWindow(new Auth(mainWindow));
         }
+
+        private void CreateDB_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult Rewrite_CreateResult = MessageBox.Show("Вы уверены что хотите создать/пересоздать базу данных для приложения? Все сохраненные данные могут быть утеряны! \n\nПродолжить?", "Создание базы данных на устройстве", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
+            if(Rewrite_CreateResult == MessageBoxResult.Yes)
+            {
+                using (var db = new DBController())
+                {
+                    db.ExecuteNonQueryCommand(ARM_Of_Phone_seller_PROJECT\Database_Logic\SQL_AddAdmin.sql);
+                }
+            }
+        }
     }
 }

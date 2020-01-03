@@ -13,16 +13,22 @@
                 <SolidColorBrush Color="White" Opacity="0.35"/>
             </Rectangle.Fill>
         </Rectangle>
+        <Button x:Name="CreateDB" HorizontalAlignment="Left" Margin="519,420,0,0" VerticalAlignment="Top" Width="145" Height="50" Click="CreateDB_Click">
+            <StackPanel Orientation="Horizontal" Height="40">
+                <Image Source="pack://application:,,,/Icons/DB.png" Width="36"/>
+                <TextBlock Width="101" TextAlignment="Center" VerticalAlignment="Center"><Run Text="Создать "/><LineBreak/><Run Text="базу данных"/></TextBlock>
+            </StackPanel>
+        </Button>
         <Button x:Name="Accept" HorizontalAlignment="Left" Margin="669,420,0,0" VerticalAlignment="Top" Width="145" Height="50" Click="Accept_Click">
             <StackPanel Orientation="Horizontal" Height="40">
                 <Image Source="pack://application:,,,/Icons/OK.png" Width="36"/>
-                <TextBlock Width="101" TextAlignment="Center"><Run Text="Применить "/><LineBreak/><Run Text="изменения"/></TextBlock>
+                <TextBlock Width="101" TextAlignment="Center" VerticalAlignment="Center"><Run Text="Применить "/><LineBreak/><Run Text="изменения"/></TextBlock>
             </StackPanel>
         </Button>
         <Button x:Name="Abort" HorizontalAlignment="Left" Margin="819,420,0,0" VerticalAlignment="Top" Width="145" Height="50" Click="Abort_Click">
             <StackPanel Orientation="Horizontal" Height="40">
                 <Image Source="pack://application:,,,/Icons/Deny.png" Width="36"/>
-                <TextBlock Width="101" TextAlignment="Center"><Run Text="Отменить "/><LineBreak/><Run Text="изменения"/></TextBlock>
+                <TextBlock Width="101" TextAlignment="Center" VerticalAlignment="Center"><Run Text="Отменить "/><LineBreak/><Run Text="изменения"/></TextBlock>
             </StackPanel>
         </Button>
         <StackPanel Margin="263,126,271.4,293" Orientation="Horizontal">

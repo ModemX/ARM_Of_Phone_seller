@@ -24,29 +24,6 @@ namespace ARM_Of_Phone_seller_PROJECT.Database_Logic.Таблицы_БД
             throw new NotImplementedException();
         }
 
-        /*        public void Insert(Модели_И_Их_Характеристики_Поля item)
-                {
-                    using (var db = new DBController())
-                    {
-                        string debug = $"INSERT INTO [Модели и характеристики] VALUES (" +
-                            $"N\'{item.Название_модели}\', " +
-                            $"\'{GetDate(item.Год_выпуска_модели)}\', " +
-                            $"\'{item.ОЗУ}\', " +
-                            $"\'{item.Количество_встроенной_памяти}\', " +
-                            $"\'{item.Слот_MicroSD}\', " +
-                            $"N\'{item.ОС}\', " +
-                            $"N\'{item.Версия_ОС}\', " +
-                            $"\'{item.Разрешение_камеры}\', " +
-                            $"\'{item.Емкость_аккумулятора}\', " +
-                            $"\'{item.Количество_SIM}\', " +
-                            $"\'{item.Длинна}\', " +
-                            $"\'{item.Ширина}\', " +
-                            $"\'{item.Толщина}\', " +
-                            $"\'{item.Вес}\'" +
-                            $")";
-                        db.ExecuteNonQueryCommand(debug);
-                    }
-            }*/
         public void InsertEmptyEntry()
         {
             using (var db = new DBController())
@@ -124,6 +101,54 @@ namespace ARM_Of_Phone_seller_PROJECT.Database_Logic.Таблицы_БД
                     $"{((item.Ширина == null) ? "NULL" : $"{ReplaceComaToDot(item.Ширина)}")}, " +
                     $"{((item.Толщина == null) ? "NULL" : $"{ReplaceComaToDot(item.Толщина)}")}, " +
                     $"{((item.Вес == null) ? "NULL" : $"{ReplaceComaToDot(item.Вес)}")}");
+            }
+        }
+
+        public IEnumerable<Модели_И_Их_Характеристики_Поля> SearchByCharacteristics(string MyValue)
+        {
+            using (var db = new DBController())
+            {
+                var reader = db.ExecuteReader($"exec SearchByCharacteristics \'{MyValue}\'");
+                var list = new List<Модели_И_Их_Характеристики_Поля>();
+
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        var model = new Модели_И_Их_Характеристики_Поля()
+                        {
+                            ID_Модели = reader.GetInt32(0),
+                            Название_модели = reader.GetString(1),
+                            Слот_MicroSD = reader.GetBoolean(5),
+                            Количество_SIM = reader.GetInt32(10),
+                        };
+
+                        if (!reader.IsDBNull(2))
+                            model.Год_выпуска_модели = (DateTime?)Convert.ToDateTime(reader.GetValue(2));
+                        if (!reader.IsDBNull(3))
+                            model.ОЗУ = (double?)Convert.ToDouble(reader.GetValue(3));
+                        if (!reader.IsDBNull(4))
+                            model.Количество_встроенной_памяти = (double?)Convert.ToDouble(reader.GetValue(4));
+                        if (!reader.IsDBNull(6))
+                            model.ОС = (string?)reader.GetValue(6);
+                        if (!reader.IsDBNull(7))
+                            model.Версия_ОС = (string?)reader.GetValue(7);
+                        if (!reader.IsDBNull(8))
+                            model.Разрешение_камеры = (double?)Convert.ToDouble(reader.GetValue(8));
+                        if (!reader.IsDBNull(9))
+                            model.Емкость_аккумулятора = (int?)Convert.ToInt32(reader.GetValue(9));
+                        if (!reader.IsDBNull(11))
+                            model.Длинна = (double?)Convert.ToDouble(reader.GetValue(11));
+                        if (!reader.IsDBNull(12))
+                            model.Ширина = (double?)Convert.ToDouble(reader.GetValue(12));
+                        if (!reader.IsDBNull(13))
+                            model.Толщина = (double?)Convert.ToDouble(reader.GetValue(13));
+                        if (!reader.IsDBNull(14))
+                            model.Вес = (double?)Convert.ToDouble(reader.GetValue(14));
+                        list.Add(model);
+                    }
+                }
+                return list;
             }
         }
 

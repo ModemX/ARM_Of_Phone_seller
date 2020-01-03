@@ -38,7 +38,7 @@
                 <TextBlock TextAlignment="Center" FontSize="18" Margin="10,0,10.2,0" FontWeight="Bold"><Run Text="Изменение"/><LineBreak/><Run Text="ассортимента"/></TextBlock>
             </StackPanel>
         </Button>
-        <Button x:Name="Placeholder3" HorizontalAlignment="Left" Margin="50,31,0,0" VerticalAlignment="Top" Width="209" Height="154" Grid.Row="1" IsEnabled="False">
+        <Button x:Name="Clients_Button" HorizontalAlignment="Left" Margin="50,31,0,0" VerticalAlignment="Top" Width="209" Height="154" Grid.Row="1" Click="Clients_Button_Click">
             <StackPanel Orientation="Vertical" Height="144" Width="199">
                 <Image Source="pack://application:,,,/Icons/User.png" Height="89" Margin="49,13,49.2,10"/>
                 <TextBlock TextAlignment="Center" FontSize="18" Margin="10,0,10.2,0" FontWeight="Bold" Text="База клиентов"></TextBlock>

@@ -1,12 +1,12 @@
 ﻿USE [master]
 GO
-/****** Object:  Database [ARM_Of_Phone_Seller]    Script Date: 04.12.2019 14:12:31 ******/
+/****** Object:  Database [ARM_Of_Phone_Seller]    Script Date: 17.12.2019 15:00:45 ******/
 CREATE DATABASE [ARM_Of_Phone_Seller]
  CONTAINMENT = NONE
  ON  PRIMARY 
-( NAME = N'ARM_Of_Phone_Seller', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL14.SQLEXPRESS\MSSQL\DATA\ARM_Of_Phone_Seller.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
+( NAME = N'ARM_Of_Phone_Seller', FILENAME = N'D:\Репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_Seller.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
  LOG ON 
-( NAME = N'ARM_Of_Phone_Seller_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL14.SQLEXPRESS\MSSQL\DATA\ARM_Of_Phone_Seller_log.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
+( NAME = N'ARM_Of_Phone_Seller_log', FILENAME = N'D:\Репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_Seller_log.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
 GO
 ALTER DATABASE [ARM_Of_Phone_Seller] SET COMPATIBILITY_LEVEL = 140
 GO
@@ -25,7 +25,7 @@ ALTER DATABASE [ARM_Of_Phone_Seller] SET ANSI_WARNINGS OFF
 GO
 ALTER DATABASE [ARM_Of_Phone_Seller] SET ARITHABORT OFF 
 GO
-ALTER DATABASE [ARM_Of_Phone_Seller] SET AUTO_CLOSE OFF 
+ALTER DATABASE [ARM_Of_Phone_Seller] SET AUTO_CLOSE ON 
 GO
 ALTER DATABASE [ARM_Of_Phone_Seller] SET AUTO_SHRINK OFF 
 GO
@@ -77,7 +77,7 @@ ALTER DATABASE [ARM_Of_Phone_Seller] SET QUERY_STORE = OFF
 GO
 USE [ARM_Of_Phone_Seller]
 GO
-/****** Object:  Table [dbo].[Товар]    Script Date: 04.12.2019 14:12:31 ******/
+/****** Object:  Table [dbo].[Товар]    Script Date: 17.12.2019 15:00:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -96,7 +96,7 @@ CREATE TABLE [dbo].[Товар](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Продажа]    Script Date: 04.12.2019 14:12:31 ******/
+/****** Object:  Table [dbo].[Продажа]    Script Date: 17.12.2019 15:00:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -119,7 +119,7 @@ CREATE TABLE [dbo].[Продажа](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Специалист]    Script Date: 04.12.2019 14:12:31 ******/
+/****** Object:  Table [dbo].[Специалист]    Script Date: 17.12.2019 15:00:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -142,7 +142,7 @@ CREATE TABLE [dbo].[Специалист](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  View [dbo].[Журнал продаж]    Script Date: 04.12.2019 14:12:31 ******/
+/****** Object:  View [dbo].[Журнал продаж]    Script Date: 17.12.2019 15:00:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -154,7 +154,7 @@ FROM     dbo.Продажа INNER JOIN
                   dbo.Специалист ON dbo.Продажа.ID_Специалиста = dbo.Специалист.ID_Специалиста INNER JOIN
                   dbo.Товар ON dbo.Продажа.ID_Модели = dbo.Товар.ID_Модели
 GO
-/****** Object:  Table [dbo].[Характеристики]    Script Date: 04.12.2019 14:12:31 ******/
+/****** Object:  Table [dbo].[Характеристики]    Script Date: 17.12.2019 15:00:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -180,7 +180,7 @@ CREATE TABLE [dbo].[Характеристики](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  View [dbo].[Модели и характеристики]    Script Date: 04.12.2019 14:12:31 ******/
+/****** Object:  View [dbo].[Модели и характеристики]    Script Date: 17.12.2019 15:00:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -194,7 +194,7 @@ SELECT dbo.Товар.ID_Модели, dbo.Товар.Название_моде�
 FROM     dbo.Товар INNER JOIN
                   dbo.Характеристики ON dbo.Товар.ID_Модели = dbo.Характеристики.ID_Модели
 GO
-/****** Object:  Table [dbo].[Клиент]    Script Date: 04.12.2019 14:12:31 ******/
+/****** Object:  Table [dbo].[Клиент]    Script Date: 17.12.2019 15:00:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -211,7 +211,7 @@ CREATE TABLE [dbo].[Клиент](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Распределение_по_цветам]    Script Date: 04.12.2019 14:12:31 ******/
+/****** Object:  Table [dbo].[Распределение_по_цветам]    Script Date: 17.12.2019 15:00:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -227,7 +227,7 @@ CREATE TABLE [dbo].[Распределение_по_цветам](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Цвета]    Script Date: 04.12.2019 14:12:31 ******/
+/****** Object:  Table [dbo].[Цвета]    Script Date: 17.12.2019 15:00:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -271,7 +271,7 @@ REFERENCES [dbo].[Товар] ([ID_Модели])
 GO
 ALTER TABLE [dbo].[Характеристики] CHECK CONSTRAINT [FK_Характеристики_Товар]
 GO
-/****** Object:  StoredProcedure [dbo].[InsertEmptyEntry]    Script Date: 04.12.2019 14:12:31 ******/
+/****** Object:  StoredProcedure [dbo].[InsertEmptyEntry]    Script Date: 17.12.2019 15:00:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -283,7 +283,85 @@ insert into Товар values('Не задано', NULL, 12, 0, 'Не задан
 insert into Характеристики values((SELECT top 1 ID_Модели FROM Товар ORDER BY ID_Модели DESC), NULL,NULL,'false',NULL,NULL,NULL,NULL,'1',NULL,NULL,NULL,NULL)
 end
 GO
-/****** Object:  StoredProcedure [dbo].[UpdateLine_Модели_И_Их_Характеристики]    Script Date: 04.12.2019 14:12:31 ******/
+/****** Object:  StoredProcedure [dbo].[SearchByСharacteristics]    Script Date: 17.12.2019 15:00:45 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+create proc [dbo].[SearchByСharacteristics]
+@SearchingValue nvarchar(max) as
+begin
+SELECT 
+Товар.ID_Модели, 
+Товар.Название_модели AS [Название модели], 
+Товар.Год_выпуска_модели AS [Год выпуска], 
+Характеристики.ОЗУ, 
+Характеристики.Количество_встроенной_памяти AS [Количество встроенной памяти], 
+Характеристики.Слот_MicroSD AS [Слот MicroSD], 
+Характеристики.ОС, 
+Характеристики.Версия_ОС AS [Версия ОС], 
+Характеристики.Разрешение_камеры AS [Разрешение камеры], 
+Характеристики.Емкость_аккумулятора AS [Емкость аккумулятора], 
+Характеристики.Количество_SIM, 
+Характеристики.Длинна, 
+Характеристики.Ширина, 
+Характеристики.Толщина, 
+Характеристики.Вес
+FROM     
+Товар INNER JOIN Характеристики ON Товар.ID_Модели = Характеристики.ID_Модели
+where 
+Товар.Название_модели like @SearchingValue 
+or Товар.Год_выпуска_модели like @SearchingValue
+or Характеристики.ОЗУ like @SearchingValue
+or Характеристики.Количество_встроенной_памяти like @SearchingValue
+or Характеристики.Слот_MicroSD like @SearchingValue
+or Характеристики.ОС like @SearchingValue
+or Характеристики.Версия_ОС like @SearchingValue
+or Характеристики.Разрешение_камеры like @SearchingValue
+or Характеристики.Емкость_аккумулятора like @SearchingValue
+or Характеристики.Количество_SIM like @SearchingValue
+or Характеристики.Длинна like @SearchingValue
+or Характеристики.Ширина like @SearchingValue
+or Характеристики.Толщина like @SearchingValue
+or Характеристики.Вес like @SearchingValue
+end
+GO
+/****** Object:  StoredProcedure [dbo].[SearchInJournal]    Script Date: 17.12.2019 15:00:45 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE proc [dbo].[SearchInJournal]
+@SearchingValue nvarchar(max) as
+begin
+SELECT 
+Продажа.Номер_Договора, 
+Продажа.Дата_заключения_договора, 
+Продажа.Срок_действия_договора, 
+Продажа.Окончание_гарантийного_срока, 
+Продажа.Дата_продажи, 
+Продажа.Процент_НДС, 
+Продажа.Стоимость_постгарантийного_обсуживания, 
+Продажа.Сумма_продажи, 
+Специалист.Фамилия AS Фамилия_Специалиста, 
+Клиент.Фамилия AS Фамилия_Клиента, 
+Товар.Название_модели 
+FROM 
+Продажа INNER JOIN Клиент ON Продажа.ID_Клиента = Клиент.ID_Клиента INNER JOIN Специалист ON Продажа.ID_Специалиста = Специалист.ID_Специалиста INNER JOIN Товар ON Продажа.ID_Модели = Товар.ID_Модели
+WHERE
+Продажа.Дата_заключения_договора like '%'+@SearchingValue+'%'
+or Продажа.Срок_действия_договора like '%'+@SearchingValue+'%'
+or Продажа.Окончание_гарантийного_срока like '%'+@SearchingValue+'%'
+or Продажа.Дата_продажи like '%'+@SearchingValue+'%'
+or Продажа.Процент_НДС like '%'+@SearchingValue+'%'
+or Продажа.Стоимость_постгарантийного_обсуживания like '%'+@SearchingValue+'%'
+or Продажа.Сумма_продажи like '%'+@SearchingValue+'%'
+or Специалист.Фамилия like '%'+@SearchingValue+'%'
+or Клиент.Фамилия like '%'+@SearchingValue+'%'
+or Товар.Название_модели like '%'+@SearchingValue+'%'
+end
+GO
+/****** Object:  StoredProcedure [dbo].[UpdateLine_Модели_И_Их_Характеристики]    Script Date: 17.12.2019 15:00:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON

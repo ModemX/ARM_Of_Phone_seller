@@ -51,6 +51,42 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="Xceed.Document.NET, Version=1.5.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>packages\DocX.1.5.0\lib\net40\Xceed.Document.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Words.NET, Version=1.5.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>packages\DocX.1.5.0\lib\net40\Xceed.Words.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Controls.v6.7, Version=6.7.19073.21200, Culture=neutral, PublicKeyToken=ba83ff368b7563c6, processorArchitecture=MSIL">
+      <HintPath>packages\Xceed.Wpf.Controls.6.7.19073.21201\lib\net40\Xceed.Wpf.Controls.v6.7.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Controls.v6.7.XmlSerializers, Version=6.7.19073.21200, Culture=neutral, PublicKeyToken=ba83ff368b7563c6, processorArchitecture=MSIL">
+      <HintPath>packages\Xceed.Wpf.Controls.6.7.19073.21201\lib\net40\Xceed.Wpf.Controls.v6.7.XmlSerializers.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.DataGrid.ThemePack.1.v6.7, Version=6.7.19073.21200, Culture=neutral, PublicKeyToken=ba83ff368b7563c6, processorArchitecture=MSIL">
+      <HintPath>packages\Xceed.Wpf.DataGrid.ThemePack.1.6.7.19073.21201\lib\net40\Xceed.Wpf.DataGrid.ThemePack.1.v6.7.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.DataGrid.ThemePack.2.v6.7, Version=6.7.19073.21200, Culture=neutral, PublicKeyToken=ba83ff368b7563c6, processorArchitecture=MSIL">
+      <HintPath>packages\Xceed.Wpf.DataGrid.ThemePack.2.6.7.19073.21201\lib\net40\Xceed.Wpf.DataGrid.ThemePack.2.v6.7.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.DataGrid.ThemePack.3.v6.7, Version=6.7.19073.21200, Culture=neutral, PublicKeyToken=ba83ff368b7563c6, processorArchitecture=MSIL">
+      <HintPath>packages\Xceed.Wpf.DataGrid.ThemePack.3.6.7.19073.21201\lib\net40\Xceed.Wpf.DataGrid.ThemePack.3.v6.7.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.DataGrid.ThemePack.4.v6.7, Version=6.7.19073.21200, Culture=neutral, PublicKeyToken=ba83ff368b7563c6, processorArchitecture=MSIL">
+      <HintPath>packages\Xceed.Wpf.DataGrid.ThemePack.4.6.7.19073.21201\lib\net40\Xceed.Wpf.DataGrid.ThemePack.4.v6.7.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.DataGrid.ThemePack.5.v6.7, Version=6.7.19073.21200, Culture=neutral, PublicKeyToken=ba83ff368b7563c6, processorArchitecture=MSIL">
+      <HintPath>packages\Xceed.Wpf.DataGrid.ThemePack.5.6.7.19073.21201\lib\net40\Xceed.Wpf.DataGrid.ThemePack.5.v6.7.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.DataGrid.v6.7, Version=6.7.19073.21200, Culture=neutral, PublicKeyToken=ba83ff368b7563c6, processorArchitecture=MSIL">
+      <HintPath>packages\Xceed.Wpf.DataGrid.6.7.19073.21201\lib\net40\Xceed.Wpf.DataGrid.v6.7.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.DataGrid.v6.7.XmlSerializers, Version=6.7.19073.21200, Culture=neutral, PublicKeyToken=ba83ff368b7563c6, processorArchitecture=MSIL">
+      <HintPath>packages\Xceed.Wpf.DataGrid.6.7.19073.21201\lib\net40\Xceed.Wpf.DataGrid.v6.7.XmlSerializers.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.DataGrid.Views3D.v6.7, Version=6.7.19073.21200, Culture=neutral, PublicKeyToken=ba83ff368b7563c6, processorArchitecture=MSIL">
+      <HintPath>packages\Xceed.Wpf.DataGrid.Views3D.6.7.19073.21201\lib\net40\Xceed.Wpf.DataGrid.Views3D.v6.7.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -65,6 +101,10 @@
     <Compile Include="Database_Logic\Таблицы_БД\Товар.cs" />
     <Compile Include="Database_Logic\Таблицы_БД\Характеристики.cs" />
     <Compile Include="Database_Logic\Таблицы_БД\Цвета.cs" />
+    <Compile Include="Export\DocumentWriter.cs" />
+    <Compile Include="Frames\Основная область\Клиенты.xaml.cs">
+      <DependentUpon>Клиенты.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Frames\Основная область\Контроль_пользователей.xaml.cs">
       <DependentUpon>Контроль_пользователей.xaml</DependentUpon>
     </Compile>
@@ -88,6 +128,10 @@
     <Compile Include="Frames\Основная область\Изменение_Источника.xaml.cs">
       <DependentUpon>Изменение_Источника.xaml</DependentUpon>
     </Compile>
+    <Page Include="Frames\Основная область\Клиенты.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Frames\Основная область\Контроль_пользователей.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -158,6 +202,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include=".editorconfig" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -167,7 +212,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Database_Logic\SQL_AddAdmin.sql" />
     <Content Include="Database_Logic\SQL_DB_Creation.sql" />
+    <Resource Include="Icons\Empty.png" />
+    <Resource Include="Icons\Word.png" />
     <Resource Include="Icons\Label.png" />
     <Resource Include="Icons\List.png" />
     <Resource Include="Icons\Search.png" />

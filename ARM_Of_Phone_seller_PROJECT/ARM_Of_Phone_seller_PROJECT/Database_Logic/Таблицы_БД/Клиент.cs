@@ -15,7 +15,7 @@ namespace ARM_Of_Phone_seller_PROJECT.Database_Logic.Таблицы_БД
         public string Отчество { get; set; }
         public string Номер_паспорта { get; set; }
     }
-    public class КлиентModel : IModel<Клиент_Поля>
+    public class КлиентModel// : IModel<Клиент_Поля>
     {
         public void Delete(Клиент_Поля item)
         {
@@ -25,16 +25,11 @@ namespace ARM_Of_Phone_seller_PROJECT.Database_Logic.Таблицы_БД
             }
         }
 
-        public void Insert(Клиент_Поля item)
+        public void Insert()
         {
             using (var db = new DBController())
             {
-                db.ExecuteNonQueryCommand($"INSERT INTO Клиент VALUES (" +
-                    $"\'{item.Фамилия}\', " +
-                    $"\'{item.Имя}\', " +
-                    $"\'{item.Отчество}\', " +
-                    $"\'{item.Номер_паспорта}\'" +
-                    $")");
+                db.ExecuteNonQueryCommand($"INSERT INTO Клиент VALUES (\'\', \'\', \'\', \'\')");
             }
         }
 

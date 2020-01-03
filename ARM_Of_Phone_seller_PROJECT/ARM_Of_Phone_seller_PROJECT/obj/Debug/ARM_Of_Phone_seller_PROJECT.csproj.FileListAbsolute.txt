@@ -60,3 +60,26 @@ D:\Скачанные репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_se
 D:\Скачанные репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\obj\Debug\ARM_Of_Phone_seller_PROJECT.csproj.GenerateResource.cache
 D:\Скачанные репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\obj\Debug\ARM_Of_Phone_seller_PROJECT.exe
 D:\Скачанные репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\obj\Debug\ARM_Of_Phone_seller_PROJECT.pdb
+D:\Репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\bin\Debug\Xceed.Document.NET.dll
+D:\Репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\bin\Debug\Xceed.Words.NET.dll
+D:\Репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\bin\Debug\Xceed.Wpf.Controls.v6.7.dll
+D:\Репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\bin\Debug\Xceed.Wpf.Controls.v6.7.XmlSerializers.dll
+D:\Репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\bin\Debug\Xceed.Wpf.DataGrid.ThemePack.1.v6.7.dll
+D:\Репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\bin\Debug\Xceed.Wpf.DataGrid.ThemePack.2.v6.7.dll
+D:\Репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\bin\Debug\Xceed.Wpf.DataGrid.ThemePack.3.v6.7.dll
+D:\Репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\bin\Debug\Xceed.Wpf.DataGrid.ThemePack.4.v6.7.dll
+D:\Репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\bin\Debug\Xceed.Wpf.DataGrid.ThemePack.5.v6.7.dll
+D:\Репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\bin\Debug\Xceed.Wpf.DataGrid.v6.7.dll
+D:\Репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\bin\Debug\Xceed.Wpf.DataGrid.v6.7.XmlSerializers.dll
+D:\Репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\bin\Debug\Xceed.Wpf.DataGrid.Views3D.v6.7.dll
+D:\Репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\bin\Debug\Xceed.Wpf.Controls.v6.7.xml
+D:\Репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\bin\Debug\Xceed.Wpf.DataGrid.ThemePack.1.v6.7.xml
+D:\Репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\bin\Debug\Xceed.Wpf.DataGrid.ThemePack.2.v6.7.xml
+D:\Репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\bin\Debug\Xceed.Wpf.DataGrid.ThemePack.3.v6.7.xml
+D:\Репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\bin\Debug\Xceed.Wpf.DataGrid.ThemePack.4.v6.7.xml
+D:\Репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\bin\Debug\Xceed.Wpf.DataGrid.ThemePack.5.v6.7.xml
+D:\Репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\bin\Debug\Xceed.Wpf.DataGrid.v6.7.xml
+D:\Репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\bin\Debug\Xceed.Wpf.DataGrid.Views3D.v6.7.xml
+D:\Репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\obj\Debug\ARM_Of_Phone_seller_PROJECT.csproj.CopyComplete
+D:\Репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\obj\Debug\Frames\Основная область\Клиенты.g.cs
+D:\Репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\obj\Debug\Frames\Основная область\Клиенты.baml

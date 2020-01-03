@@ -13,11 +13,12 @@
             <ColumnDefinition Width="100*"/>
             <ColumnDefinition Width="30*"/>
         </Grid.ColumnDefinitions>
-        <DataGrid Margin="10,10,9.6,10" Background="{x:Null}" IsSynchronizedWithCurrentItem="True" BorderBrush="{x:Null}">
+        <DataGrid x:Name="JournalGrid" Margin="10,10,9.6,10" Background="{x:Null}" IsSynchronizedWithCurrentItem="True" BorderBrush="{x:Null}" AutoGenerateColumns="False" CanUserAddRows="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Модель" Width="150" Binding="{x:Null}" ClipboardContentBinding="{x:Null}"/>
-                <DataGridTextColumn Header="Цвет" Width="100" Binding="{x:Null}" ClipboardContentBinding="{x:Null}"/>
-                <DataGridTextColumn Header="Количество" Binding="{x:Null}" ClipboardContentBinding="{x:Null}"/>
+                <DataGridTextColumn Header="Клиент" Width="150" Binding="{Binding ID_Клиента}" ClipboardContentBinding="{x:Null}"/>
+                <DataGridTextColumn Header="Модель" Width="100" Binding="{Binding ID_Модели}" ClipboardContentBinding="{x:Null}"/>
+                <DataGridTextColumn Header="Дата приобретения" Binding="{Binding Дата_продажи_DataGridView}" ClipboardContentBinding="{x:Null}"/>
+                <DataGridTextColumn Header="Стоимость" Binding="{Binding Сумма_продажи}" ClipboardContentBinding="{x:Null}"/>
             </DataGrid.Columns>
         </DataGrid>
         <StackPanel Grid.Column="1" Margin="10.4,10">
@@ -28,26 +29,26 @@
                         <SolidColorBrush Color="White" Opacity="0.75"/>
                     </Rectangle.Fill>
                 </Rectangle>
-                <Label HorizontalAlignment="Center" Content="Поиск модели:" FontSize="15" Height="33" Margin="46,5,46,0" VerticalAlignment="Top"/>
-                <TextBox Margin="10,0,10,10" TextWrapping="Wrap" Text="" Height="23" VerticalAlignment="Bottom"/>
+                <Label Content="Поиск по столбцам:" FontSize="15" Height="33" Margin="27,5,27,0" VerticalAlignment="Top" Width="150" HorizontalAlignment="Center"/>
+                <TextBox x:Name="SearchField_TextBox" Margin="10,0,10,10" TextWrapping="Wrap" Text="" Height="23" VerticalAlignment="Bottom" TextChanged="SearchField_TextBox_TextChanged"/>
             </Grid>
 
-            <Button Margin="0,0,0,10" Height="45" VerticalAlignment="Top">
+            <Button x:Name="ClearField_Button" Margin="0,0,0,10" Height="45" VerticalAlignment="Top" Click="ClearField_Button_Click">
                 <StackPanel Orientation="Horizontal" Width="203">
-                    <Image Source="pack://application:,,,/Icons/Search.png" Width="40" Height="40"/>
-                    <TextBlock VerticalAlignment="Center" Margin="20,0,0,0"><Run Text="Найти"/></TextBlock>
-                </StackPanel>
-            </Button>
-            <Button Margin="0,0,0,10" Height="45" VerticalAlignment="Top">
-                <StackPanel Orientation="Horizontal" Width="203">
-                    <Image Source="pack://application:,,,/Icons/Shopping.png" Width="40" Height="40"/>
-                    <TextBlock VerticalAlignment="Center" Margin="20,0,0,0"><Run Text="Оформить выбранное"/></TextBlock>
+                    <Image Source="pack://application:,,,/Icons/Empty.png" Width="40" Height="40"/>
+                    <TextBlock VerticalAlignment="Center" Margin="20,0,0,0"><Run Text="Очистить поле"/></TextBlock>
                 </StackPanel>
             </Button>
             <Button x:Name="Return_Button" Margin="0,0,0,10" Height="45" VerticalAlignment="Top" Click="Return_Button_Click">
                 <StackPanel Orientation="Horizontal" Width="203">
                     <Image Source="pack://application:,,,/Icons/Back.png" Width="40" Height="40"/>
                     <TextBlock VerticalAlignment="Center" Margin="20,0,0,0"><Run Text="Вернуться"/></TextBlock>
+                </StackPanel>
+            </Button>
+            <Button x:Name="ExportToWord" Margin="0,0,0,10" Height="45" VerticalAlignment="Top" Click="ExportToWord_Click">
+                <StackPanel Orientation="Horizontal" Width="203">
+                    <Image Source="pack://application:,,,/Icons/Word.png" Width="40" Height="40"/>
+                    <TextBlock VerticalAlignment="Center" Margin="20,0,0,0"><Run Text="Вывести в файл"/></TextBlock>
                 </StackPanel>
             </Button>
 
