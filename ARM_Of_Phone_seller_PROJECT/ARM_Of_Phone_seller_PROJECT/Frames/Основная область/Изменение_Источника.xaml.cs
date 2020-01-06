@@ -29,6 +29,8 @@ namespace ARM_Of_Phone_seller_PROJECT.View
             mainWindow = _mainWindow;
             TextBox_DBName.Text = DBController.DBController_DBName;
             TextBox_User.Text = DBController.DBController_User;
+            ChangesWarning.Visibility = Visibility.Hidden;
+
         }
 
         private void Accept_Click(object sender, RoutedEventArgs e)
@@ -50,11 +52,21 @@ namespace ARM_Of_Phone_seller_PROJECT.View
             MessageBoxResult Rewrite_CreateResult = MessageBox.Show("Вы уверены что хотите создать/пересоздать базу данных для приложения? Все сохраненные данные могут быть утеряны! \n\nПродолжить?", "Создание базы данных на устройстве", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
             if(Rewrite_CreateResult == MessageBoxResult.Yes)
             {
-                using (var db = new DBController())
+                using (var db = new DBController(true))
                 {
-                    db.ExecuteNonQueryCommand(ARM_Of_Phone_seller_PROJECT\Database_Logic\SQL_AddAdmin.sql);
+                    db.ExecuteNonQueryCommand(SqlFiles.SQL_DB_Creation);
+                    db.ExecuteNonQueryCommand(SqlFiles.SQL_AddAdmin);
                 }
             }
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            try
+            {
+                ChangesWarning.Visibility = Visibility.Visible;
+            }
+            catch { }
         }
     }
 }

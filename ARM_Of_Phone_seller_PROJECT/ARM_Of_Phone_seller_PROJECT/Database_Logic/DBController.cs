@@ -1,32 +1,50 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.SqlServer.Management.Common;
+using Microsoft.SqlServer.Management.Smo;
+using System;
 using System.Data.SqlClient;
+using System.Windows;
 
 namespace ARM_Of_Phone_seller_PROJECT.Database_Logic
 {
-    class DBController : IDisposable
+    internal class DBController : IDisposable
     {
         private static string db = Properties.Settings.Default.ИмяСервера;
         private static string user = Properties.Settings.Default.ИмяПользователя;
         public static string DBController_DBName { get => db; set => db = value; }
         public static string DBController_User { get => user; set => user = value; }
-        private static string Path
-        {
-            get
-            {
-                return $"Data Source={Properties.Settings.Default.ИмяПользователя};Initial Catalog={Properties.Settings.Default.ИмяСервера};Integrated Security=True";
-            }
-        }
+        private static string Path => $"Data Source={Properties.Settings.Default.ИмяПользователя};Initial Catalog={Properties.Settings.Default.ИмяСервера};Integrated Security=True";
 
-        SqlConnection connection;
-
+        private SqlConnection connection;
+        public bool ErrorOccured { get; private set; } = false;
         public DBController()
         {
             connection = new SqlConnection(Path);
-            connection.Open();
+            try
+            {
+                connection.Open();
+            }
+            catch (SqlException e)
+            {
+                MessageBox.Show(e.Message, "Ошибка SQL Сервера", MessageBoxButton.OK, MessageBoxImage.Error);
+                ErrorOccured = true;
+            }
+        }
+
+        public DBController(bool IsMaster)
+        {
+            if (IsMaster)
+            {
+                connection = new SqlConnection($"Data Source={Properties.Settings.Default.ИмяПользователя};Initial Catalog=master;Integrated Security=True");
+                try
+                {
+                    connection.Open();
+                }
+                catch (SqlException e)
+                {
+                    MessageBox.Show(e.Message, "Ошибка SQL Сервера", MessageBoxButton.OK, MessageBoxImage.Error);
+                    ErrorOccured = true;
+                }
+            }
         }
         public void Dispose()
         {
@@ -35,21 +53,26 @@ namespace ARM_Of_Phone_seller_PROJECT.Database_Logic
 
         public void ExecuteNonQueryCommand(string command)
         {
-            using (var sqlCom = new SqlCommand(command, connection))
+            command = command.Replace("GO", "");
+            using (SqlCommand sqlCom = new SqlCommand(command, connection))
             {
-                sqlCom.ExecuteNonQuery();
+                if (!ErrorOccured)
+                    sqlCom.ExecuteNonQuery();
             }
         }
         public SqlDataReader ExecuteReader(string command)
         {
             SqlDataReader reader = null;
 
-            using (var sqlCom = new SqlCommand(command, connection))
+            using (SqlCommand sqlCom = new SqlCommand(command, connection))
             {
-                reader = sqlCom.ExecuteReader();
+                if (!ErrorOccured)
+                    reader = sqlCom.ExecuteReader();
             }
-
-            return reader;
+            if (!ErrorOccured)
+                return reader;
+            else
+                return null;
         }
     }
 }

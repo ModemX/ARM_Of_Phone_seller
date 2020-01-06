@@ -24,8 +24,8 @@ namespace ARM_Of_Phone_seller_PROJECT
 
         private void Auth_Button_Login_Click(object sender, RoutedEventArgs e)
         {
-            var list = model.Select().ToList();
-            var hash = HashingClass.Hashing(Auth_Password.Password);
+            System.Collections.Generic.List<Специалист_Поля> list = model.Select().ToList();
+            string hash = HashingClass.Hashing(Auth_Password.Password);
             Специалист_Поля User;
             if ((User = list.FirstOrDefault(it => it.Логин == Auth_Login.Text && it.Пароль == hash)) != null)
             {

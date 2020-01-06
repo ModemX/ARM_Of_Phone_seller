@@ -21,14 +21,11 @@ namespace ARM_Of_Phone_seller_PROJECT.Model
         /*Для DataGrid*/
         public string Дата_рождения_DataGridView
         {
-            get
-            {
-                return $"" +
+            get => $"" +
                     $"{((Дата_рождения.Day < 10) ? $"0{Дата_рождения.Day}" : $"{Дата_рождения.Day}")}." +
                     $"{((Дата_рождения.Month < 10) ? $"0{Дата_рождения.Month}" : $"{Дата_рождения.Month}")}." +
                     $"{Дата_рождения.Year}";
-            }
-            set 
+            set
             {
                 try
                 {
@@ -45,43 +42,47 @@ namespace ARM_Of_Phone_seller_PROJECT.Model
     {
         public void Delete(Специалист_Поля item)
         {
-            using (var db = new DBController())
+            using (DBController db = new DBController())
             {
                 db.ExecuteNonQueryCommand($"DELETE FROM Специалист WHERE ID_Специалиста = {item.ID_Специалиста}");
             }
         }
         public void Insert(Специалист_Поля item)
         {
-            using (var db = new DBController())
+            using (DBController db = new DBController())
             {
                 db.ExecuteNonQueryCommand($"INSERT INTO Специалист VALUES (N\'{item.Логин}\', N\'{item.Пароль}\', {item.Телефон}, N\'{item.Статус}\', N\'{item.Фамилия}\', N\'{item.Имя}\', N\'{item.Отчество}\', \'{GetDate(item.Дата_рождения)}\', N\'{item.Основание_работы}\', \'{item.Администратор.ToString().ToLower()}\')");
             }
         }
         public IEnumerable<Специалист_Поля> Select()
         {
-            using (var db = new DBController())
+            using (DBController db = new DBController())
             {
-                var reader = db.ExecuteReader($"SELECT * FROM Специалист");
-                var list = new List<Специалист_Поля>();
+                List<Специалист_Поля> list = new List<Специалист_Поля>();
 
-                if (reader.HasRows)
+                if (!db.ErrorOccured)
                 {
-                    while (reader.Read())
+                    System.Data.SqlClient.SqlDataReader reader = db.ExecuteReader($"SELECT * FROM Специалист");
+
+                    if (reader.HasRows)
                     {
-                        list.Add(new Специалист_Поля()
+                        while (reader.Read())
                         {
-                            ID_Специалиста = reader.GetInt32(0),
-                            Логин = reader.GetString(1),
-                            Пароль = reader.GetString(2),
-                            Телефон = reader.GetInt64(3),
-                            Статус = reader.GetString(4),
-                            Фамилия = reader.GetString(5),
-                            Имя = reader.GetString(6),
-                            Отчество = reader.GetString(7),
-                            Дата_рождения = reader.GetDateTime(8),
-                            Основание_работы = reader.GetString(9),
-                            Администратор = reader.GetBoolean(10)
-                        });
+                            list.Add(new Специалист_Поля()
+                            {
+                                ID_Специалиста = reader.GetInt32(0),
+                                Логин = reader.GetString(1),
+                                Пароль = reader.GetString(2),
+                                Телефон = reader.GetInt64(3),
+                                Статус = reader.GetString(4),
+                                Фамилия = reader.GetString(5),
+                                Имя = reader.GetString(6),
+                                Отчество = reader.GetString(7),
+                                Дата_рождения = reader.GetDateTime(8),
+                                Основание_работы = reader.GetString(9),
+                                Администратор = reader.GetBoolean(10)
+                            });
+                        }
                     }
                 }
                 return list;
@@ -89,7 +90,7 @@ namespace ARM_Of_Phone_seller_PROJECT.Model
         }
         public void Update(Специалист_Поля item)
         {
-            using (var db = new DBController())
+            using (DBController db = new DBController())
             {
                 db.ExecuteNonQueryCommand($"UPDATE Специалист SET Логин = N\'{item.Логин}\', Пароль = N\'{item.Пароль}\', Телефон = {item.Телефон}, Статус = N\'{item.Статус}\', Фамилия = N\'{item.Фамилия}\', Имя = N\'{item.Имя}\', Отчество = N\'{item.Отчество}\', Дата_рождения = \'{GetDate(item.Дата_рождения)}\', Основание_работы = N\'{item.Основание_работы}\', Администратор = \'{item.Администратор.ToString().ToLower()}\' where ID_Специалиста = {item.ID_Специалиста}");
             }
@@ -99,6 +100,5 @@ namespace ARM_Of_Phone_seller_PROJECT.Model
         {
             return $"{date.Day}/{date.Month}/{date.Year}";
         }
-
     }
 }

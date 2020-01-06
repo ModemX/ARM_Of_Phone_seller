@@ -43,7 +43,6 @@ D:\Скачанные репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_se
 D:\Скачанные репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\obj\Debug\Frames\Основная область\Главная_страница.g.cs
 D:\Скачанные репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\obj\Debug\Frames\Основная область\Изменение_Источника.g.cs
 D:\Скачанные репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\obj\Debug\App.g.cs
-D:\Скачанные репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\obj\Debug\ARM_Of_Phone_seller_PROJECT_Content.g.cs
 D:\Скачанные репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\obj\Debug\ARM_Of_Phone_seller_PROJECT_MarkupCompile.cache
 D:\Скачанные репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\obj\Debug\ARM_Of_Phone_seller_PROJECT_MarkupCompile.lref
 D:\Скачанные репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\obj\Debug\Frames\Основная область\Контроль_пользователей.baml
@@ -83,3 +82,30 @@ D:\Репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of
 D:\Репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\obj\Debug\ARM_Of_Phone_seller_PROJECT.csproj.CopyComplete
 D:\Репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\obj\Debug\Frames\Основная область\Клиенты.g.cs
 D:\Репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\obj\Debug\Frames\Основная область\Клиенты.baml
+D:\Скачанные репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\obj\Debug\Frames\Основная область\Клиенты.g.cs
+D:\Скачанные репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\bin\Debug\Microsoft.SqlServer.ConnectionInfo.dll
+D:\Скачанные репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\bin\Debug\Microsoft.SqlServer.Management.Sdk.Sfc.dll
+D:\Скачанные репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\bin\Debug\Microsoft.SqlServer.Smo.dll
+D:\Скачанные репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\bin\Debug\Xceed.Document.NET.dll
+D:\Скачанные репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\bin\Debug\Xceed.Words.NET.dll
+D:\Скачанные репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\bin\Debug\Xceed.Wpf.Controls.v6.7.dll
+D:\Скачанные репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\bin\Debug\Xceed.Wpf.Controls.v6.7.XmlSerializers.dll
+D:\Скачанные репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\bin\Debug\Xceed.Wpf.DataGrid.ThemePack.1.v6.7.dll
+D:\Скачанные репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\bin\Debug\Xceed.Wpf.DataGrid.ThemePack.2.v6.7.dll
+D:\Скачанные репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\bin\Debug\Xceed.Wpf.DataGrid.ThemePack.3.v6.7.dll
+D:\Скачанные репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\bin\Debug\Xceed.Wpf.DataGrid.ThemePack.4.v6.7.dll
+D:\Скачанные репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\bin\Debug\Xceed.Wpf.DataGrid.ThemePack.5.v6.7.dll
+D:\Скачанные репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\bin\Debug\Xceed.Wpf.DataGrid.v6.7.dll
+D:\Скачанные репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\bin\Debug\Xceed.Wpf.DataGrid.v6.7.XmlSerializers.dll
+D:\Скачанные репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\bin\Debug\Xceed.Wpf.DataGrid.Views3D.v6.7.dll
+D:\Скачанные репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\bin\Debug\Xceed.Wpf.Controls.v6.7.xml
+D:\Скачанные репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\bin\Debug\Xceed.Wpf.DataGrid.ThemePack.1.v6.7.xml
+D:\Скачанные репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\bin\Debug\Xceed.Wpf.DataGrid.ThemePack.2.v6.7.xml
+D:\Скачанные репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\bin\Debug\Xceed.Wpf.DataGrid.ThemePack.3.v6.7.xml
+D:\Скачанные репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\bin\Debug\Xceed.Wpf.DataGrid.ThemePack.4.v6.7.xml
+D:\Скачанные репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\bin\Debug\Xceed.Wpf.DataGrid.ThemePack.5.v6.7.xml
+D:\Скачанные репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\bin\Debug\Xceed.Wpf.DataGrid.v6.7.xml
+D:\Скачанные репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\bin\Debug\Xceed.Wpf.DataGrid.Views3D.v6.7.xml
+D:\Скачанные репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\obj\Debug\Frames\Основная область\Клиенты.baml
+D:\Скачанные репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\obj\Debug\ARM_Of_Phone_seller_PROJECT.SqlFiles.resources
+D:\Скачанные репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_seller_PROJECT\ARM_Of_Phone_seller_PROJECT\obj\Debug\ARM_Of_Phone_seller_PROJECT.csproj.CopyComplete

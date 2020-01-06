@@ -36,6 +36,15 @@
     <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.SqlServer.ConnectionInfo, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.SqlServer.Scripting.11.0.2100.61\lib\Microsoft.SqlServer.ConnectionInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Management.Sdk.Sfc, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.SqlServer.Scripting.11.0.2100.61\lib\Microsoft.SqlServer.Management.Sdk.Sfc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Smo, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.SqlServer.Scripting.11.0.2100.61\lib\Microsoft.SqlServer.Smo.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -110,6 +119,11 @@
     </Compile>
     <Compile Include="Frames\Основная область\Реализация_товара.xaml.cs">
       <DependentUpon>Реализация_товара.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SqlFiles.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SqlFiles.resx</DependentUpon>
     </Compile>
     <Compile Include="Windows\Add_Edit_UserWindow.xaml.cs">
       <DependentUpon>Add_Edit_UserWindow.xaml</DependentUpon>
@@ -201,6 +215,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="SqlFiles.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SqlFiles.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include=".editorconfig" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -212,8 +230,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Database_Logic\SQL_AddAdmin.sql" />
-    <Content Include="Database_Logic\SQL_DB_Creation.sql" />
+    <Resource Include="Database_Logic\SQL_AddAdmin.sql" />
+    <Resource Include="Database_Logic\SQL_DB_Creation.sql" />
     <Resource Include="Icons\Empty.png" />
     <Resource Include="Icons\Word.png" />
     <Resource Include="Icons\Label.png" />

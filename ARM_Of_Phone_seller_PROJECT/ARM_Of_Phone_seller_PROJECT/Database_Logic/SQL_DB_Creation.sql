@@ -3,10 +3,6 @@ GO
 /****** Object:  Database [ARM_Of_Phone_Seller]    Script Date: 17.12.2019 15:00:45 ******/
 CREATE DATABASE [ARM_Of_Phone_Seller]
  CONTAINMENT = NONE
- ON  PRIMARY 
-( NAME = N'ARM_Of_Phone_Seller', FILENAME = N'D:\Репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_Seller.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
- LOG ON 
-( NAME = N'ARM_Of_Phone_Seller_log', FILENAME = N'D:\Репозитории\ARM_Of_Phone_seller\ARM_Of_Phone_Seller_log.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
 GO
 ALTER DATABASE [ARM_Of_Phone_Seller] SET COMPATIBILITY_LEVEL = 140
 GO
