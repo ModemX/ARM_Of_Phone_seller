@@ -1,15 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace ARM_Of_Phone_seller_PROJECT.Database_Logic
 {
-    static public class HashingClass
+    public static class HashingClass
     {
-        static public string Hashing(string data)
+        public static string Hashing(string data)
         {
             string hash = "";
             using (MD5 md5Hash = MD5.Create())

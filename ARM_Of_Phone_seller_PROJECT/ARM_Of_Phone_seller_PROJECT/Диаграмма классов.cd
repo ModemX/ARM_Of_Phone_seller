@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ARM_Of_Phone_seller_PROJECT.Model.Специалист_Поля">
+    <Position X="8.25" Y="4" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAEGAEABAgAAAAAABAAABBAAAAAAAEAAAIAAAA=</HashCode>
+      <FileName>Database_Logic\Таблицы_БД\Специалист.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ARM_Of_Phone_seller_PROJECT.Model.СпециалистModel" BaseTypeListCollapsed="true">
+    <Position X="5.25" Y="3.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Database_Logic\Таблицы_БД\Специалист.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ARM_Of_Phone_seller_PROJECT.Database_Logic.Таблицы_БД.Вызов_представлений_Базы_данных" BaseTypeListCollapsed="true">
+    <Position X="5.25" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>ABQAAEAAAAEAAAAAAAAAAAAAAAEAAAAAAAAgQAAAAAg=</HashCode>
+      <FileName>Database_Logic\Таблицы_БД\Вызов представлений Базы данных.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ARM_Of_Phone_seller_PROJECT.Database_Logic.Таблицы_БД.Модели_И_Их_Характеристики_Поля">
+    <Position X="11.75" Y="0.5" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>IAAgAAAACIABAIAAECAAEoAAqCAgAAAgAJAAAAQKIAI=</HashCode>
+      <FileName>Database_Logic\Таблицы_БД\Вызов представлений Базы данных.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ARM_Of_Phone_seller_PROJECT.Database_Logic.Таблицы_БД.Клиент_Поля">
+    <Position X="11.75" Y="6.75" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAEAAAAEAAAAAAABAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Database_Logic\Таблицы_БД\Клиент.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ARM_Of_Phone_seller_PROJECT.Database_Logic.Таблицы_БД.КлиентModel">
+    <Position X="5.25" Y="7" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Database_Logic\Таблицы_БД\Клиент.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ARM_Of_Phone_seller_PROJECT.Database_Logic.Таблицы_БД.Продажа_Поля">
+    <Position X="8.25" Y="0.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AACBABAAgAEgAEAAAAAAAIACAAAAEAAAAAYAAAAAAAA=</HashCode>
+      <FileName>Database_Logic\Таблицы_БД\Продажа.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ARM_Of_Phone_seller_PROJECT.Database_Logic.Таблицы_БД.ПродажаModel">
+    <Position X="5.25" Y="5.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAAAAAAAAAAAAEAAIAAAAAAQAAAAAA=</HashCode>
+      <FileName>Database_Logic\Таблицы_БД\Продажа.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ARM_Of_Phone_seller_PROJECT.Database_Logic.HashingClass">
+    <Position X="0.5" Y="1.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAEABAAAAAA=</HashCode>
+      <FileName>Database_Logic\HashingClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ARM_Of_Phone_seller_PROJECT.Database_Logic.DBController" BaseTypeListCollapsed="true">
+    <Position X="2.5" Y="2.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAACAQACIAAAABAAQAAAAAAAhAAAAAAAAAAQA=</HashCode>
+      <FileName>Database_Logic\DBController.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ARM_Of_Phone_seller_PROJECT.View.Shared_Data">
+    <Position X="0.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Frames\Shared Data.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ARM_Of_Phone_seller_PROJECT.Switcher">
+    <Position X="2.5" Y="6.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAUAAAAAAACAAAAIAAABACAAAA=</HashCode>
+      <FileName>Frames\Switcher.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="ARM_Of_Phone_seller_PROJECT.Model.IModel&lt;T&gt;">
+    <Position X="2.5" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Database_Logic\Таблицы_БД\IModel.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

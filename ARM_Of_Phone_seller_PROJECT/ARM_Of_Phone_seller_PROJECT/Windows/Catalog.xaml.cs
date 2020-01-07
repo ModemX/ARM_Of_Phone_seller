@@ -1,20 +1,9 @@
 ﻿using ARM_Of_Phone_seller_PROJECT.Database_Logic.Таблицы_БД;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace ARM_Of_Phone_seller_PROJECT
-{ 
+{
     public partial class Catalog : Window
     {
         Вызов_представлений_Базы_данных МоделиView = new Вызов_представлений_Базы_данных();
@@ -27,17 +16,17 @@ namespace ARM_Of_Phone_seller_PROJECT
 
         private void SaveChanges_Click(object sender, RoutedEventArgs e)
         {
-            foreach (var item in CatalogGrid.ItemsSource)
+            foreach (object item in CatalogGrid.ItemsSource)
             {
-                var data = item as Модели_И_Их_Характеристики_Поля;
+                Модели_И_Их_Характеристики_Поля data = item as Модели_И_Их_Характеристики_Поля;
                 МоделиView.Update(item as Модели_И_Их_Характеристики_Поля);
             }
             CatalogGrid.ItemsSource = МоделиView.Select();
         }
         private void CatalogGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var item = CatalogGrid.SelectedItem as Модели_И_Их_Характеристики_Поля;
-            
+            Модели_И_Их_Характеристики_Поля item = CatalogGrid.SelectedItem as Модели_И_Их_Характеристики_Поля;
+
             Form_Модель.Content = "Модель: " + item.Название_модели;
             Form_ГодВыпуска.Content = "Год выпуска: " + item.Год_Выпуска_Модели_DataGridBinding;
             Form_ОЗУ.Content = "ОЗУ: " + item.ОЗУ_DataGridBinding;
@@ -59,7 +48,7 @@ namespace ARM_Of_Phone_seller_PROJECT
         }
         private void ShowLast_Click(object sender, RoutedEventArgs e)
         {
-            CatalogGrid.SelectedIndex = CatalogGrid.Items.Count-2;
+            CatalogGrid.SelectedIndex = CatalogGrid.Items.Count - 2;
         }
         private void ShowPrevious_Click(object sender, RoutedEventArgs e)
         {
@@ -71,7 +60,7 @@ namespace ARM_Of_Phone_seller_PROJECT
         }
         private void DeleteEntry_Click(object sender, RoutedEventArgs e)
         {
-            var item = CatalogGrid.SelectedItem as Модели_И_Их_Характеристики_Поля;
+            Модели_И_Их_Характеристики_Поля item = CatalogGrid.SelectedItem as Модели_И_Их_Характеристики_Поля;
 
             if (item == null)
             {

@@ -1,25 +1,9 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ARM_Of_Phone_seller_PROJECT.Database_Logic;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using ARM_Of_Phone_seller_PROJECT.Database_Logic;
 
 namespace ARM_Of_Phone_seller_PROJECT.View
 {
-    /// <summary>
-    /// Логика взаимодействия для Изменение_Источника.xaml
-    /// </summary>
     public partial class Изменение_Источника : Page
     {
         MainWindow mainWindow;
@@ -50,9 +34,9 @@ namespace ARM_Of_Phone_seller_PROJECT.View
         private void CreateDB_Click(object sender, RoutedEventArgs e)
         {
             MessageBoxResult Rewrite_CreateResult = MessageBox.Show("Вы уверены что хотите создать/пересоздать базу данных для приложения? Все сохраненные данные могут быть утеряны! \n\nПродолжить?", "Создание базы данных на устройстве", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
-            if(Rewrite_CreateResult == MessageBoxResult.Yes)
+            if (Rewrite_CreateResult == MessageBoxResult.Yes)
             {
-                using (var db = new DBController(true))
+                using (DBController db = new DBController(true))
                 {
                     db.ExecuteNonQueryCommand(SqlFiles.SQL_DB_Creation);
                     db.ExecuteNonQueryCommand(SqlFiles.SQL_AddAdmin);

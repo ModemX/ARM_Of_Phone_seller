@@ -123,7 +123,7 @@ namespace ARM_Of_Phone_seller_PROJECT.Windows
             }
             finally
             {
-                if(IsOk)
+                if (IsOk)
                 {
                     if (mode == Mode.Edit) специалистModel.Update(ItemToUpdateOrInsert);
                     else if (mode == Mode.Add) специалистModel.Insert(ItemToUpdateOrInsert);
@@ -134,14 +134,6 @@ namespace ARM_Of_Phone_seller_PROJECT.Windows
 
         private string Decryption(string sPassword)
         {
-            //byte[] saltBytes = new byte[] { 1, 222, 31, 20, 11, 23, 85, 6 };
-            //byte[] saltedHashBytes = new HMACMD5(saltBytes).ComputeHash(Encoding.UTF8.GetBytes(sPassword));
-            //System.Text.StringBuilder s = new System.Text.StringBuilder();
-            //foreach (byte b in saltedHashBytes)
-            //{
-            //    s.Append(b.ToString("x2").ToUpper());
-            //}
-            //return s.ToString();
             return sPassword;
         }
         private long? Phone(string number)

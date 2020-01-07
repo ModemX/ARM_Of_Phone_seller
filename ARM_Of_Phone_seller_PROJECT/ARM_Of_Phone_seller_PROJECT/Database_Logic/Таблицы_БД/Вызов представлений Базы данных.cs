@@ -1,11 +1,6 @@
 ﻿using ARM_Of_Phone_seller_PROJECT.Model;
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Documents;
 
 namespace ARM_Of_Phone_seller_PROJECT.Database_Logic.Таблицы_БД
 {
@@ -13,7 +8,7 @@ namespace ARM_Of_Phone_seller_PROJECT.Database_Logic.Таблицы_БД
     {
         public void Delete(Модели_И_Их_Характеристики_Поля item)
         {
-            using (var db = new DBController())
+            using (DBController db = new DBController())
             {
                 db.ExecuteNonQueryCommand($"delete from Характеристики where ID_Модели = \'{item.ID_Модели}\'");
             }
@@ -26,7 +21,7 @@ namespace ARM_Of_Phone_seller_PROJECT.Database_Logic.Таблицы_БД
 
         public void InsertEmptyEntry()
         {
-            using (var db = new DBController())
+            using (DBController db = new DBController())
             {
                 string debug = "exec InsertEmptyEntry";
                 db.ExecuteNonQueryCommand(debug);
@@ -35,16 +30,16 @@ namespace ARM_Of_Phone_seller_PROJECT.Database_Logic.Таблицы_БД
 
         public IEnumerable<Модели_И_Их_Характеристики_Поля> Select()
         {
-            using (var db = new DBController())
+            using (DBController db = new DBController())
             {
-                var reader = db.ExecuteReader($"SELECT dbo.Товар.ID_Модели, dbo.Товар.Название_модели AS [Название модели], dbo.Товар.Год_выпуска_модели AS [Год выпуска], dbo.Характеристики.ОЗУ, dbo.Характеристики.Количество_встроенной_памяти AS [Количество встроенной памяти], dbo.Характеристики.Слот_MicroSD AS [Слот MicroSD], dbo.Характеристики.ОС, dbo.Характеристики.Версия_ОС AS [Версия ОС], dbo.Характеристики.Разрешение_камеры AS [Разрешение камеры], dbo.Характеристики.Емкость_аккумулятора AS [Емкость аккумулятора], dbo.Характеристики.Количество_SIM, dbo.Характеристики.Длинна, dbo.Характеристики.Ширина, dbo.Характеристики.Толщина, dbo.Характеристики.Вес FROM dbo.Товар INNER JOIN dbo.Характеристики ON dbo.Товар.ID_Модели = dbo.Характеристики.ID_Модели");
-                var list = new List<Модели_И_Их_Характеристики_Поля>();
+                System.Data.SqlClient.SqlDataReader reader = db.ExecuteReader($"SELECT dbo.Товар.ID_Модели, dbo.Товар.Название_модели AS [Название модели], dbo.Товар.Год_выпуска_модели AS [Год выпуска], dbo.Характеристики.ОЗУ, dbo.Характеристики.Количество_встроенной_памяти AS [Количество встроенной памяти], dbo.Характеристики.Слот_MicroSD AS [Слот MicroSD], dbo.Характеристики.ОС, dbo.Характеристики.Версия_ОС AS [Версия ОС], dbo.Характеристики.Разрешение_камеры AS [Разрешение камеры], dbo.Характеристики.Емкость_аккумулятора AS [Емкость аккумулятора], dbo.Характеристики.Количество_SIM, dbo.Характеристики.Длинна, dbo.Характеристики.Ширина, dbo.Характеристики.Толщина, dbo.Характеристики.Вес FROM dbo.Товар INNER JOIN dbo.Характеристики ON dbo.Товар.ID_Модели = dbo.Характеристики.ID_Модели");
+                List<Модели_И_Их_Характеристики_Поля> list = new List<Модели_И_Их_Характеристики_Поля>();
 
                 if (reader.HasRows)
                 {
                     while (reader.Read())
                     {
-                        var model = new Модели_И_Их_Характеристики_Поля()
+                        Модели_И_Их_Характеристики_Поля model = new Модели_И_Их_Характеристики_Поля()
                         {
                             ID_Модели = reader.GetInt32(0),
                             Название_модели = reader.GetString(1),
@@ -55,25 +50,25 @@ namespace ARM_Of_Phone_seller_PROJECT.Database_Logic.Таблицы_БД
                         if (!reader.IsDBNull(2))
                             model.Год_выпуска_модели = (DateTime?)Convert.ToDateTime(reader.GetValue(2));
                         if (!reader.IsDBNull(3))
-                            model.ОЗУ = (double?)Convert.ToDouble(reader.GetValue(3));
+                            model.ОЗУ = Convert.ToDouble(reader.GetValue(3));
                         if (!reader.IsDBNull(4))
-                            model.Количество_встроенной_памяти = (double?)Convert.ToDouble(reader.GetValue(4));
+                            model.Количество_встроенной_памяти = Convert.ToDouble(reader.GetValue(4));
                         if (!reader.IsDBNull(6))
                             model.ОС = (string?)reader.GetValue(6);
                         if (!reader.IsDBNull(7))
                             model.Версия_ОС = (string?)reader.GetValue(7);
                         if (!reader.IsDBNull(8))
-                            model.Разрешение_камеры = (double?)Convert.ToDouble(reader.GetValue(8));
+                            model.Разрешение_камеры = Convert.ToDouble(reader.GetValue(8));
                         if (!reader.IsDBNull(9))
-                            model.Емкость_аккумулятора = (int?)Convert.ToInt32(reader.GetValue(9));
+                            model.Емкость_аккумулятора = Convert.ToInt32(reader.GetValue(9));
                         if (!reader.IsDBNull(11))
-                            model.Длинна = (double?)Convert.ToDouble(reader.GetValue(11));
+                            model.Длинна = Convert.ToDouble(reader.GetValue(11));
                         if (!reader.IsDBNull(12))
-                            model.Ширина = (double?)Convert.ToDouble(reader.GetValue(12));
+                            model.Ширина = Convert.ToDouble(reader.GetValue(12));
                         if (!reader.IsDBNull(13))
-                            model.Толщина = (double?)Convert.ToDouble(reader.GetValue(13));
+                            model.Толщина = Convert.ToDouble(reader.GetValue(13));
                         if (!reader.IsDBNull(14))
-                            model.Вес = (double?)Convert.ToDouble(reader.GetValue(14));
+                            model.Вес = Convert.ToDouble(reader.GetValue(14));
                         list.Add(model);
                     }
                 }
@@ -83,7 +78,7 @@ namespace ARM_Of_Phone_seller_PROJECT.Database_Logic.Таблицы_БД
 
         public void Update(Модели_И_Их_Характеристики_Поля item)
         {
-            using (var db = new DBController())
+            using (DBController db = new DBController())
             {
                 db.ExecuteNonQueryCommand($"exec UpdateLine_Модели_И_Их_Характеристики " +
                     $"{item.ID_Модели}, " +
@@ -106,16 +101,16 @@ namespace ARM_Of_Phone_seller_PROJECT.Database_Logic.Таблицы_БД
 
         public IEnumerable<Модели_И_Их_Характеристики_Поля> SearchByCharacteristics(string MyValue)
         {
-            using (var db = new DBController())
+            using (DBController db = new DBController())
             {
-                var reader = db.ExecuteReader($"exec SearchByCharacteristics \'{MyValue}\'");
-                var list = new List<Модели_И_Их_Характеристики_Поля>();
+                System.Data.SqlClient.SqlDataReader reader = db.ExecuteReader($"exec SearchByCharacteristics \'{MyValue}\'");
+                List<Модели_И_Их_Характеристики_Поля> list = new List<Модели_И_Их_Характеристики_Поля>();
 
                 if (reader.HasRows)
                 {
                     while (reader.Read())
                     {
-                        var model = new Модели_И_Их_Характеристики_Поля()
+                        Модели_И_Их_Характеристики_Поля model = new Модели_И_Их_Характеристики_Поля()
                         {
                             ID_Модели = reader.GetInt32(0),
                             Название_модели = reader.GetString(1),
@@ -126,25 +121,25 @@ namespace ARM_Of_Phone_seller_PROJECT.Database_Logic.Таблицы_БД
                         if (!reader.IsDBNull(2))
                             model.Год_выпуска_модели = (DateTime?)Convert.ToDateTime(reader.GetValue(2));
                         if (!reader.IsDBNull(3))
-                            model.ОЗУ = (double?)Convert.ToDouble(reader.GetValue(3));
+                            model.ОЗУ = Convert.ToDouble(reader.GetValue(3));
                         if (!reader.IsDBNull(4))
-                            model.Количество_встроенной_памяти = (double?)Convert.ToDouble(reader.GetValue(4));
+                            model.Количество_встроенной_памяти = Convert.ToDouble(reader.GetValue(4));
                         if (!reader.IsDBNull(6))
                             model.ОС = (string?)reader.GetValue(6);
                         if (!reader.IsDBNull(7))
                             model.Версия_ОС = (string?)reader.GetValue(7);
                         if (!reader.IsDBNull(8))
-                            model.Разрешение_камеры = (double?)Convert.ToDouble(reader.GetValue(8));
+                            model.Разрешение_камеры = Convert.ToDouble(reader.GetValue(8));
                         if (!reader.IsDBNull(9))
-                            model.Емкость_аккумулятора = (int?)Convert.ToInt32(reader.GetValue(9));
+                            model.Емкость_аккумулятора = Convert.ToInt32(reader.GetValue(9));
                         if (!reader.IsDBNull(11))
-                            model.Длинна = (double?)Convert.ToDouble(reader.GetValue(11));
+                            model.Длинна = Convert.ToDouble(reader.GetValue(11));
                         if (!reader.IsDBNull(12))
-                            model.Ширина = (double?)Convert.ToDouble(reader.GetValue(12));
+                            model.Ширина = Convert.ToDouble(reader.GetValue(12));
                         if (!reader.IsDBNull(13))
-                            model.Толщина = (double?)Convert.ToDouble(reader.GetValue(13));
+                            model.Толщина = Convert.ToDouble(reader.GetValue(13));
                         if (!reader.IsDBNull(14))
-                            model.Вес = (double?)Convert.ToDouble(reader.GetValue(14));
+                            model.Вес = Convert.ToDouble(reader.GetValue(14));
                         list.Add(model);
                     }
                 }
@@ -255,9 +250,9 @@ namespace ARM_Of_Phone_seller_PROJECT.Database_Logic.Таблицы_БД
                     return "Нет данных";
                 else
                     if (Количество_встроенной_памяти < 1)
-                        return $"{Количество_встроенной_памяти * 1000} МБ";
-                    else
-                        return $"{Количество_встроенной_памяти} ГБ";
+                    return $"{Количество_встроенной_памяти * 1000} МБ";
+                else
+                    return $"{Количество_встроенной_памяти} ГБ";
             }
             set
             {
@@ -303,7 +298,7 @@ namespace ARM_Of_Phone_seller_PROJECT.Database_Logic.Таблицы_БД
                     return "Нет данных";
                 return ОС;
             }
-            set 
+            set
             {
                 if (value == "Нет данных")
                     ОС = null;

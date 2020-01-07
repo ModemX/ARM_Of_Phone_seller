@@ -1,5 +1,5 @@
-﻿using ARM_Of_Phone_seller_PROJECT.View;
-using ARM_Of_Phone_seller_PROJECT.Database_Logic.Таблицы_БД;
+﻿using ARM_Of_Phone_seller_PROJECT.Database_Logic.Таблицы_БД;
+using ARM_Of_Phone_seller_PROJECT.View;
 using System.Windows;
 using System.Windows.Controls;
 

@@ -1,9 +1,4 @@
-﻿using ARM_Of_Phone_seller_PROJECT.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace ARM_Of_Phone_seller_PROJECT.Database_Logic.Таблицы_БД
 {
@@ -19,7 +14,7 @@ namespace ARM_Of_Phone_seller_PROJECT.Database_Logic.Таблицы_БД
     {
         public void Delete(Клиент_Поля item)
         {
-            using (var db = new DBController())
+            using (DBController db = new DBController())
             {
                 db.ExecuteNonQueryCommand($"DELETE FROM Клиент WHERE ID_Клиента = {item.ID_Клиента}");
             }
@@ -27,7 +22,7 @@ namespace ARM_Of_Phone_seller_PROJECT.Database_Logic.Таблицы_БД
 
         public void Insert()
         {
-            using (var db = new DBController())
+            using (DBController db = new DBController())
             {
                 db.ExecuteNonQueryCommand($"INSERT INTO Клиент VALUES (\'\', \'\', \'\', \'\')");
             }
@@ -35,10 +30,10 @@ namespace ARM_Of_Phone_seller_PROJECT.Database_Logic.Таблицы_БД
 
         public IEnumerable<Клиент_Поля> Select()
         {
-            using (var db = new DBController())
+            using (DBController db = new DBController())
             {
-                var reader = db.ExecuteReader($"SELECT * FROM Клиент");
-                var list = new List<Клиент_Поля>();
+                System.Data.SqlClient.SqlDataReader reader = db.ExecuteReader($"SELECT * FROM Клиент");
+                List<Клиент_Поля> list = new List<Клиент_Поля>();
 
                 if (reader.HasRows)
                 {
@@ -60,7 +55,7 @@ namespace ARM_Of_Phone_seller_PROJECT.Database_Logic.Таблицы_БД
 
         public void Update(Клиент_Поля item)
         {
-            using (var db = new DBController())
+            using (DBController db = new DBController())
             {
                 db.ExecuteNonQueryCommand($"UPDATE Клиент " +
                     $"SET " +

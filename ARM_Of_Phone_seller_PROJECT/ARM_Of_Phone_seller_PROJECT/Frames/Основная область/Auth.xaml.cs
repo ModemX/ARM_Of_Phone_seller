@@ -2,10 +2,7 @@
 using ARM_Of_Phone_seller_PROJECT.Model;
 using ARM_Of_Phone_seller_PROJECT.View;
 using ARM_Of_Phone_seller_PROJECT.View.Информационная_панель;
-using System;
 using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 

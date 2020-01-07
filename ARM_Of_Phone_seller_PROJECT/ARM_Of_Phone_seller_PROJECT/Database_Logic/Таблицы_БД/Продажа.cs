@@ -1,9 +1,5 @@
-﻿using ARM_Of_Phone_seller_PROJECT.Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ARM_Of_Phone_seller_PROJECT.Database_Logic.Таблицы_БД
 {
@@ -47,38 +43,18 @@ namespace ARM_Of_Phone_seller_PROJECT.Database_Logic.Таблицы_БД
     {
         public void Delete(Продажа_Поля item)
         {
-            using (var db = new DBController())
+            using (DBController db = new DBController())
             {
                 db.ExecuteNonQueryCommand($"DELETE FROM Продажа WHERE Номер_договора = {item.Номер_договора}");
             }
         }
 
-        //public void Insert(Продажа_Поля item)
-        //{
-        //    using (var db = new DBController())
-        //    {
-        //        db.ExecuteNonQueryCommand($"INSERT INTO Продажа VALUES (" +
-        //            $"\'{item.Номер_договора}\', " +
-        //            $"{GetDate(item.Дата_заключения_договора)}, " +
-        //            $"{item.Срок_действия_договора}, " +
-        //            $"{GetDate(item.Окончание_гарантийного_срока)}, " +
-        //            $"{GetDate(item.Дата_продажи)}, " +
-        //            $"{item.Процент_НДС}, " +
-        //            $"{item.Стоимость_постгарантийного_обсуживания}, " +
-        //            $"{item.Сумма_продажи}, " +
-        //            $"{item.ID_Специалиста}, " +
-        //            $"{item.ID_Клиента}, " +
-        //            $"{item.ID_Модели}, " +
-        //            $")");
-        //    }
-        //}
-
         public IEnumerable<Продажа_Поля> Select()
         {
-            using (var db = new DBController())
+            using (DBController db = new DBController())
             {
-                var reader = db.ExecuteReader($"SELECT dbo.Продажа.Номер_Договора, dbo.Продажа.Дата_заключения_договора, dbo.Продажа.Срок_действия_договора, dbo.Продажа.Окончание_гарантийного_срока, dbo.Продажа.Дата_продажи, dbo.Продажа.Процент_НДС, dbo.Продажа.Стоимость_постгарантийного_обсуживания, dbo.Продажа.Сумма_продажи, dbo.Специалист.Фамилия AS Фамилия_Специалиста, dbo.Клиент.Фамилия AS Фамилия_Клиента, dbo.Товар.Название_модели FROM dbo.Продажа INNER JOIN dbo.Клиент ON dbo.Продажа.ID_Клиента = dbo.Клиент.ID_Клиента INNER JOIN dbo.Специалист ON dbo.Продажа.ID_Специалиста = dbo.Специалист.ID_Специалиста INNER JOIN dbo.Товар ON dbo.Продажа.ID_Модели = dbo.Товар.ID_Модели");
-                var list = new List<Продажа_Поля>();
+                System.Data.SqlClient.SqlDataReader reader = db.ExecuteReader($"SELECT dbo.Продажа.Номер_Договора, dbo.Продажа.Дата_заключения_договора, dbo.Продажа.Срок_действия_договора, dbo.Продажа.Окончание_гарантийного_срока, dbo.Продажа.Дата_продажи, dbo.Продажа.Процент_НДС, dbo.Продажа.Стоимость_постгарантийного_обсуживания, dbo.Продажа.Сумма_продажи, dbo.Специалист.Фамилия AS Фамилия_Специалиста, dbo.Клиент.Фамилия AS Фамилия_Клиента, dbo.Товар.Название_модели FROM dbo.Продажа INNER JOIN dbo.Клиент ON dbo.Продажа.ID_Клиента = dbo.Клиент.ID_Клиента INNER JOIN dbo.Специалист ON dbo.Продажа.ID_Специалиста = dbo.Специалист.ID_Специалиста INNER JOIN dbo.Товар ON dbo.Продажа.ID_Модели = dbo.Товар.ID_Модели");
+                List<Продажа_Поля> list = new List<Продажа_Поля>();
 
                 if (reader.HasRows)
                 {
@@ -103,32 +79,13 @@ namespace ARM_Of_Phone_seller_PROJECT.Database_Logic.Таблицы_БД
                 return list;
             }
         }
-
-        //public void Update(Продажа_Поля item)
-        //{
-        //    using (var db = new DBController())
-        //    {
-        //        db.ExecuteNonQueryCommand($"UPDATE Клиент SET " +
-        //            $"Номер_договора = {item.Номер_договора}, " +
-        //            $"Дата_заключения_договора = {item.Дата_заключения_договора}, " +
-        //            $"Срок_действия_договора = {item.Стоимость_постгарантийного_обсуживания}, " +
-        //            $"Окончание_гарантийного_срока = {item.Окончание_гарантийного_срока}, " +
-        //            $"Дата_продажи = {item.Дата_продажи}, " +
-        //            $"Процент_НДС = {item.Процент_НДС}, " +
-        //            $"Стоимость_постгарантийного_обсуживания = {item.Стоимость_постгарантийного_обсуживания}, " +
-        //            $"Сумма_продажи = {item.Сумма_продажи}, " +
-        //            $"ID_Специалиста = {item.ID_Специалиста}, " +
-        //            $"ID_Клиента = {item.ID_Клиента}, " +
-        //            $"ID_Модели = {item.ID_Модели}");
-        //    }
-        //}
 
         public IEnumerable<Продажа_Поля> SearchInJournal(string MyValue)
         {
-            using (var db = new DBController())
+            using (DBController db = new DBController())
             {
-                var reader = db.ExecuteReader($"exec SearchInJournal \'{MyValue}\'");
-                var list = new List<Продажа_Поля>();
+                System.Data.SqlClient.SqlDataReader reader = db.ExecuteReader($"exec SearchInJournal \'{MyValue}\'");
+                List<Продажа_Поля> list = new List<Продажа_Поля>();
 
                 if (reader.HasRows)
                 {
@@ -153,11 +110,9 @@ namespace ARM_Of_Phone_seller_PROJECT.Database_Logic.Таблицы_БД
                 return list;
             }
         }
-
         private string GetDate(DateTime date)
         {
             return $"{date.Day}/{date.Month}/{date.Year}";
         }
-
     }
 }
